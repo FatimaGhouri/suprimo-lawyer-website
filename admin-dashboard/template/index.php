@@ -74,10 +74,14 @@ $appCount = mysqli_fetch_array($appCountResult)[0];
                             aria-labelledby="profileDropdown">
                             <a class="dropdown-item" href="pages/samples/logout.php">
                                 <i class="ti-power-off text-primary"></i>
-                                Logout edit by fatima
+                                Logout edit by habiba
                             </a>
                         </div>
                     </li>
+
+
+
+
 
                 </ul>
 
