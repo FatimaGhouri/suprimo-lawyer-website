@@ -11,11 +11,11 @@ if (isset($_POST['registerCustomer'])) {
 
   $resultCust = mysqli_query($conn, $regCust);
 
-    if ($resultCust) {
-        header("location:loginForm.php");
-    } else {
-        echo ("got some issue in registerin customer");
-    }
+  if ($resultCust) {
+    header("location:loginForm.php");
+  } else {
+    echo ("got some issue in registerin customer");
+  }
 }
 if (isset($_POST['registerLawyer'])) {
   $fullname = $_POST['fullname'];
@@ -39,18 +39,18 @@ if (isset($_POST['registerLawyer'])) {
       mysqli_stmt_bind_param($stmt, "ssssssss", $fullname, $email, $password, $contact, $service, $location, $imgName, $description);
       mysqli_stmt_execute($stmt);
 
-            if (mysqli_stmt_affected_rows($stmt) > 0) {
-                header("location:loginForm.php");
-            } else {
-                echo "got issue";
-            }
-        } else {
-            echo "Error in preparing the statement.";
-        }
+      if (mysqli_stmt_affected_rows($stmt) > 0) {
+        header("location:loginForm.php");
+      } else {
+        echo "got issue";
+      }
     } else {
-      echo "Error in uploading image";
+      echo "Error in preparing the statement.";
     }
-  } 
+  } else {
+    echo "Error in uploading image";
+  }
+}
 
 
 ?>
@@ -196,8 +196,7 @@ if (isset($_POST['registerLawyer'])) {
 
     .form-panel-2 {
       position: absolute;
-      width: 100%;
-      top: -150px;
+      width: 100%; 
       transform: translateX(-120%);
     }
 
@@ -246,6 +245,16 @@ if (isset($_POST['registerLawyer'])) {
       color: #ffffff;
     }
 
+    form#registrationForm {
+      margin: auto;
+      display: flex;
+      width: 100%;
+      position: relative;
+      height: 100%;
+      flex-direction: column;
+      justify-content: center;
+    }
+
     @media (max-width:767px) {
       .image-container {
         width: 100%;
@@ -266,8 +275,8 @@ if (isset($_POST['registerLawyer'])) {
     function custBtnChange() {
       let firstBtn = document.getElementById("firstBtn");
       firstBtn.value = "Submit";
-      firstBtn.name="registerCustomer";
-      firstBtn.type="submit";
+      firstBtn.name = "registerCustomer";
+      firstBtn.type = "submit";
     }
 
     function toggleForm() {
@@ -314,10 +323,9 @@ if (isset($_POST['registerLawyer'])) {
       <img src="images/attorneys/reg-form-pic.jpg" alt="Large Image" />
     </div>
     <!-- Form container -->
-    <div class="form-container d-flex align-items-center">
-      <div id="formContent" class="form-content w-100">
+    <div class="form-container d-flex align-items-center w-100">
+      <div id="formContent" class="form-content w-100 h-100">
         <!-- Common form panel for both customers and lawyers -->
-
         <form id="registrationForm" method="POST" enctype="multipart/form-data">
           <div class="form-panel-1" id="panel-one">
             <h2>Registration Form</h2>
