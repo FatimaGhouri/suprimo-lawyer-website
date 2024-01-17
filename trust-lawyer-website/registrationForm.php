@@ -318,7 +318,7 @@ if (isset($_POST['registerLawyer'])) {
     <div class="image-container">
       <div class="auth-ovrlay">
         <!-- <h2>Welcome To Suprimo</h2> -->
-        <img src='./images/logo/logo.png' />
+        <!-- <img src='./images/logo/logo.png' /> -->
       </div>
       <img src="images/attorneys/reg-form-pic.jpg" alt="Large Image" />
     </div>
@@ -328,6 +328,7 @@ if (isset($_POST['registerLawyer'])) {
         <!-- Common form panel for both customers and lawyers -->
         <form id="registrationForm" method="POST" enctype="multipart/form-data">
           <div class="form-panel-1" id="panel-one">
+          <img src="./images/logo/logo.png" style=" width: 50%; height: 45px; margin-top: 40px; margin-left: 130px; margin-bottom:30px; ">
             <h2>Registration Form</h2>
             <!-- Common inputs for both -->
             <label for="fullname">Full Name:</label>
@@ -383,6 +384,7 @@ if (isset($_POST['registerLawyer'])) {
           </div>
 
           <div class="form-panel-2" id="panel-two">
+          <img src="./images/logo/logo.png" style=" width: 50%; height: 45px; margin-top: 40px; margin-left: 130px; margin-bottom:30px; ">
             <h2>Additional Information</h2>
             <p>
               As you are proceeding with your lawyer registration, please
