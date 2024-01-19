@@ -8674,7 +8674,7 @@
   --gray-lighter: #e8eff4;
   --gray-lightest: #e6e9ed;
   --black: #000000;
-  --primary: #4B49AC;
+  --primary: #cca776;
   --secondary: #a3a4a5;
   --success: #57B657;
   --info: #248AFD;
@@ -22075,14 +22075,22 @@ code {
   opacity: .5;
   font-size: .75rem;
 }
-
-.card.card-tale {
-  background: #7DA0FA;
-  color: #ffffff;
+.btn-primary {
+  color: #fff !important;
+  background-color: #cca776 !important;
+  border-color: #cca776 !important;
 }
-
+.card.card-tale {
+  background: #cca776 ;
+  color: #ffffff !important;
+}
+.card.card-tale .dse{
+      font-size: 20px;
+    font-weight: 700;
+    font-family: "Nunito", sans-serif;
+}
 .card.card-tale:hover {
-  background: #96b2fb;
+  background: #c39961;
 }
 
 .card.card-dark-blue {
@@ -28591,7 +28599,7 @@ div.tagsinput span.tag a {
 }
 
 .sidebar .nav .nav-item.active > .nav-link {
-  background: #4B49AC;
+  background: #cca776;
   position: relative;
 }
 
@@ -28622,7 +28630,7 @@ div.tagsinput span.tag a {
 }
 
 .sidebar .nav:not(.sub-menu) > .nav-item:hover > .nav-link, .sidebar .nav:not(.sub-menu) > .nav-item:hover[aria-expanded="true"] {
-  background: #4B49AC;
+  background: #291d0d;
   color: #fff;
 }
 
@@ -28632,7 +28640,7 @@ div.tagsinput span.tag a {
 
 .sidebar .nav:not(.sub-menu) > .nav-item > .nav-link[aria-expanded="true"] {
   border-radius: 8px 8px 0 0;
-  background: #4B49AC;
+  background: #291d0d;
   color: #fff;
 }
 
@@ -30592,4 +30600,4 @@ div.tagsinput span.tag a {
   }
 }
 
-/*# sourceMappingURL=../maps/vertical-layout-light/style.css.map */
+/* # sourceMappingURL=../maps/vertical-layout-light/style.css.map */
