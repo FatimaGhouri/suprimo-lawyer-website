@@ -11198,34 +11198,34 @@ fieldset:disabled .wizard > .actions a,
 
 .btn-info {
   color: #fff;
-  background-color: #248AFD;
-  border-color: #248AFD;
+  background-color: #cca776;
+  border-color: #cca776;
 }
 
 .btn-info:hover {
   color: #fff;
-  background-color: #0276f8;
-  border-color: #0270ec;
+  background-color: #cca776;
+  border-color: #cca776;
 }
 
 .btn-info:focus, .btn-info.focus {
   color: #fff;
-  background-color: #0276f8;
-  border-color: #0270ec;
+  background-color: #cca776;
+  border-color: #cca776;
   box-shadow: 0 0 0 0.2rem rgba(69, 156, 253, 0.5);
 }
 
 .btn-info.disabled, .btn-info:disabled {
   color: #fff;
-  background-color: #248AFD;
-  border-color: #248AFD;
+  background-color: #cca776;
+  border-color: #cca776;
 }
 
 .btn-info:not(:disabled):not(.disabled):active, .btn-info:not(:disabled):not(.disabled).active,
 .show > .btn-info.dropdown-toggle {
   color: #fff;
-  background-color: #0270ec;
-  border-color: #026adf;
+  background-color: #cca776;
+  border-color: #cca776;
 }
 
 .btn-info:not(:disabled):not(.disabled):active:focus, .btn-info:not(:disabled):not(.disabled).active:focus,
@@ -11382,14 +11382,14 @@ fieldset:disabled .wizard > .actions a,
 }
 
 .btn-outline-primary {
-  color: #4B49AC;
-  border-color: #4B49AC;
+  color: #cca776;
+  border-color: #cca776;
 }
 
 .btn-outline-primary:hover {
   color: #fff;
-  background-color: #4B49AC;
-  border-color: #4B49AC;
+  background-color: #cca776;
+  border-color: #cca776;
 }
 
 .btn-outline-primary:focus, .btn-outline-primary.focus {
@@ -11397,15 +11397,15 @@ fieldset:disabled .wizard > .actions a,
 }
 
 .btn-outline-primary.disabled, .btn-outline-primary:disabled {
-  color: #4B49AC;
+  color: #cca776;
   background-color: transparent;
 }
 
 .btn-outline-primary:not(:disabled):not(.disabled):active, .btn-outline-primary:not(:disabled):not(.disabled).active,
 .show > .btn-outline-primary.dropdown-toggle {
   color: #fff;
-  background-color: #4B49AC;
-  border-color: #4B49AC;
+  background-color: #cca776;
+  border-color: #cca776;
 }
 
 .btn-outline-primary:not(:disabled):not(.disabled):active:focus, .btn-outline-primary:not(:disabled):not(.disabled).active:focus,
@@ -11941,7 +11941,7 @@ input[type="button"].btn-block {
 .dropdown-item.active, .dropdown-item:active {
   color: #fff;
   text-decoration: none;
-  background-color: #007bff;
+  background-color: #cca776;
 }
 
 .dropdown-item.disabled, .dropdown-item:disabled {
@@ -12875,8 +12875,8 @@ input[type="button"].btn-block {
 
 .custom-control-input:checked ~ .custom-control-label::before {
   color: #fff;
-  border-color: #007bff;
-  background-color: #007bff;
+  border-color: #cca776;
+  background-color: #cca776;
 }
 
 .custom-control-input:focus ~ .custom-control-label::before {
@@ -12940,8 +12940,8 @@ input[type="button"].btn-block {
 }
 
 .custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label::before {
-  border-color: #007bff;
-  background-color: #007bff;
+  border-color: #cca776;
+  background-color: #cca776;
 }
 
 .custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label::after {
@@ -13169,7 +13169,7 @@ input[type="button"].btn-block {
   width: 1rem;
   height: 1rem;
   margin-top: -0.25rem;
-  background-color: #007bff;
+  background-color: #cca776;
   border: 0;
   border-radius: 1rem;
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -13183,7 +13183,7 @@ input[type="button"].btn-block {
 }
 
 .custom-range::-webkit-slider-thumb:active {
-  background-color: #b3d7ff;
+  background-color: #cca776;
 }
 
 .custom-range::-webkit-slider-runnable-track {
@@ -13199,7 +13199,7 @@ input[type="button"].btn-block {
 .custom-range::-moz-range-thumb {
   width: 1rem;
   height: 1rem;
-  background-color: #007bff;
+  background-color: #cca776;
   border: 0;
   border-radius: 1rem;
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -13232,7 +13232,7 @@ input[type="button"].btn-block {
   margin-top: 0;
   margin-right: 0.2rem;
   margin-left: 0.2rem;
-  background-color: #007bff;
+  background-color: #cca776;
   border: 0;
   border-radius: 1rem;
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -13368,7 +13368,7 @@ input[type="button"].btn-block {
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
   color: #fff;
-  background-color: #007bff;
+  background-color: #cca776;
 }
 
 .nav-fill > .nav-link,

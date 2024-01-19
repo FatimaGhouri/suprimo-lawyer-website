@@ -142,7 +142,7 @@ $appCount = mysqli_fetch_array($appCountResult)[0];
                     <div class="row" >
                         <div class="col-md-12 grid-margin stretch-card border-0">
                             <div class="card tale-bg">
-                                    <img src="images/dashboard-img.jpg" alt="people" style="height: 130px;">
+                                    <img src="../images/page-title/01.png" alt="people" style="height: 130px;">
                                     <div class="weather-info">
                                         <div class="d-flex">
                                             <div>

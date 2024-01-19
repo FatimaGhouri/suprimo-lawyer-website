@@ -398,10 +398,10 @@ $secResult = mysqli_query($conn, $secLawyers);
                 </div>
                 <div class="col-lg-8 col-md-12">
                     <div class="row">
-                        <?php
-if (mysqli_num_rows($firstResult) > 0) {
-    while ($rows = mysqli_fetch_assoc($firstResult)) {
-        ?>
+                    <?php
+            if (mysqli_num_rows($firstResult) > 0) {
+            while ($rows = mysqli_fetch_assoc($firstResult)) {
+                    ?>
                         <div class="col-md-6 col-sm-6">
                             <div class="attorneys-info attorneys-hv-link mg-attorneys-home custom-align custom-end">
 
