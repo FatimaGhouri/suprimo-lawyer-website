@@ -1,6 +1,6 @@
 <?php
 require_once "config.php";
-session_start();
+@session_start();
 if (isset($_SESSION["id"]) && $_SESSION["userType"] === "lawyer") {
     $lawyerId = $_SESSION["id"];
     $lawyerSql = "SELECT * FROM lawyers WHERE id = '$lawyerId'";

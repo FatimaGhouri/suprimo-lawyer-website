@@ -1,4 +1,5 @@
 <?php
+require_once "config.php";
 require_once "partials/header.php";
 $firstLawyers = "SELECT * FROM lawyers LIMIT 2";
 $secLawyers = "SELECT * FROM lawyers LIMIT 2 OFFSET 2";
