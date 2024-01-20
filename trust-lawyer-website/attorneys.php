@@ -1,8 +1,8 @@
 <?php
-require_once "partials/header.php";
+require_once "config.php";
 $sql = "SELECT * FROM lawyers";
 $result = mysqli_query($conn, $sql);
-
+require_once "partials/header.php";
 
 ?>
 <div class="page-title">
@@ -172,28 +172,28 @@ document.getElementById('searchByLocation').addEventListener('click', function()
 function performSearch(searchMethod) {
     if (searchMethod === 'service') {
 
-        document.getElementById("serviceSearchOption").addEventListener('input', function() {
-            let selectedOpt = document.getElementById('serviceSearchOption').value;
-            fetch("searchAttorney.php?service=" + selectedOpt)
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('attorneys-detail').innerHTML = data;
-                })
-                .catch(error => console.error("Error".error));
-        })
+            document.getElementById("serviceSearchOption").addEventListener('input', function() {
+                let selectedOpt = document.getElementById('serviceSearchOption').value;
+                fetch("searchAttorney.php?service=" + selectedOpt)
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('attorneys-detail').innerHTML = data;
+                    })
+                    .catch(error => console.error("Error".error));
+            })
+        }
+        if (searchMethod === 'location') {
+            document.getElementById("locationSearchOption").addEventListener('input', function() {
+                let selectedOpt = document.getElementById('locationSearchOption').value;
+                fetch("searchAttorney.php?location=" + selectedOpt)
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('attorneys-detail').innerHTML = data;
+                    })
+                    .catch(error => console.error("Error".error));
+            })
+        }
     }
-    if (searchMethod === 'location') {
-        document.getElementById("locationSearchOption").addEventListener('input', function() {
-            let selectedOpt = document.getElementById('locationSearchOption').value;
-            fetch("searchAttorney.php?location=" + selectedOpt)
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('attorneys-detail').innerHTML = data;
-                })
-                .catch(error => console.error("Error".error));
-        })
-    }
-}
 </script>
 
 <?php

@@ -30,83 +30,8 @@ if(isset($_POST['appSubmit'])){
         echo "no such customer found";
     }
 }
-
-?>
-<!DOCTYPE html>
-<html lang="zxx">
-
-<!-- attorneys-single.php  22 Nov 2019 12:06:34 GMT -->
-
-<head>
-    <meta charset="UTF-8">
-    <title>Suprimo</title>
-
-    <!-- Mobile Specific Metas-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-    <!-- Bootstrap-->
-    <link rel="stylesheet" href="stylesheet/bootstrap.css">
-
-    <!-- Template Style-->
-    <link rel="stylesheet" href="stylesheet/all.css">
-    <link rel="stylesheet" href="stylesheet/animate.css">
-    <link rel="stylesheet" href="stylesheet/style.css">
-    <link rel="stylesheet" href="stylesheet/shortcodes.css">
-    <link rel="stylesheet" href="stylesheet/responsive.css">
-    <link rel="stylesheet" href="stylesheet/flexslider.css">
-    <link rel="stylesheet" href="rev-slider/css/layers.css">
-    <link rel="stylesheet" href="rev-slider/css/navigation.css">
-    <link rel="stylesheet" href="rev-slider/css/settings.css">
-
-    <link href="icon/favicon.ico" rel="shortcut icon">
-    <style>
-   
-
-   .attorney-app-container{
-    padding: 60px 20px;
-   }
-
-    .appointment-form {
-        padding: 20px;
-    }
-
-    .form-group {
-        margin-bottom: 15px;
-    }
-
-    .image-container {
-        padding: 20px;
-    }
-
-    .attorney-app-container .image-container img{
-        width: 80%;
-    }
-
-    .appointment-form .lawyerSelection option{
-        margin-bottom:10px;
-    }
-
-    .book-slot-btn {
-        background-color: #cca776;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        cursor: pointer;
-    }
-    
-    h2 {
-            color: #cca776;
-            text-align: center;
-            margin-bottom: 42px;
-            margin-top: 40px;
-            font-size: 35px;
-        }
-
-    /* Add more styling as needed */
-    </style>
-</head>
-
-<body>
+require_once "partials/header.php"; 
+?> 
     <div class="attorney-app-container">
         <div class="container">
             <div class="row">

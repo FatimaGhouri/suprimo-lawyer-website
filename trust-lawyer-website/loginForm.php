@@ -314,15 +314,16 @@ if (isset($_POST['loginLawyer'])) {
 
                         ?>
 
-                        <div class="input_wrapper">
-                            <input type="email" id="email" name="email" class="input_field" class="form-control" placeholder="Your Email" required>
+                        <div class="input_wrapper mt-4">
                             <label for="email" class="input_label">Email:</label>
+                            <input type="email" id="email" name="email" class="input_field" class="form-control" placeholder="Your Email" required>
                             <!-- svg -->
                         </div>
 
-                        <div class="input_wrapper">
-                            <input type="password" id="password" name="password" class="input_field" class="form-control" placeholder="Your Password" required>
+                        <div class="input_wrapper mt-4">
                             <label for="password" class="input_label">Password:</label>
+                            <input type="password" id="password" name="password" class="input_field" class="form-control" placeholder="Your Password"
+                             title="Minimum 6 character at least 1 Alphabet and 1 Number" required>
                             <!-- svg -->
                         </div>
 

@@ -1,10 +1,11 @@
 <?php
+require_once "config.php"; 
 require_once "partials/header.php";
 if(isset($_GET['id'])){
     $attorneyId = $_GET['id'];
     $searchSql = "SELECT* FROM lawyers WHERE id = '$attorneyId'";
     $result = mysqli_query($conn, $searchSql);
-    if(mysqli_num_rows($result)>0){
+    if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
         $attorney_name = $row['fullname'];
         $attorney_email = $row['email'];
@@ -18,442 +19,204 @@ if(isset($_GET['id'])){
 $allAttorneySql = "SELECT * FROM lawyers";
 $allResult = mysqli_query($conn, $allAttorneySql);
 
+
+require_once "partials/header.php";
 ?>
-<!DOCTYPE html>
-<html lang="zxx">
-
-<!-- attorneys-single.php  22 Nov 2019 12:06:34 GMT -->
-
-<head>
-    <meta charset="UTF-8">
-    <title>Suprimo</title>
-
-    <!-- Mobile Specific Metas-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-    <!-- Bootstrap-->
-    <link rel="stylesheet" href="stylesheet/bootstrap.css">
-
-    <!-- Template Style-->
-    <link rel="stylesheet" href="stylesheet/all.css">
-    <link rel="stylesheet" href="stylesheet/animate.css">
-    <link rel="stylesheet" href="stylesheet/style.css">
-    <link rel="stylesheet" href="stylesheet/shortcodes.css">
-    <link rel="stylesheet" href="stylesheet/responsive.css">
-    <link rel="stylesheet" href="stylesheet/flexslider.css">
-    <link rel="stylesheet" href="rev-slider/css/layers.css">
-    <link rel="stylesheet" href="rev-slider/css/navigation.css">
-    <link rel="stylesheet" href="rev-slider/css/settings.css">
-
-    <link href="icon/favicon.ico" rel="shortcut icon">
-</head>
-
-<body>
-  <div class="attorneys-single">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-9 col-md-12">
-                    <div class="attorneys-single-warp d-md-flex">
-                        <div class="col-left">
-                            <div class="personal-details">
-                                <div class="featured-post">
-                                    <div class="entry-image">
-                                        <img src="../admin-dashboard/template/images/uploads/<?php echo $attorney_image;?>"
-                                            alt="images">
-                                    </div>
-                                </div>
-                                <ul class="attorneys-info-sn">
-                                    <li>
-                                        <h3 class="name-info name-size">Advocate <?php echo ucwords($attorney_name);?>
-                                        </h3>
-                                        <p><?php echo $attorney_service; ?></p>
-                                    </li>
-                                    <li>
-                                        <div class="name-info">Location</div>
-                                        <p><?php echo $attorney_location; ?></p>
-                                    </li>
-                                    <li>
-                                        <div class="name-info">Email</div>
-                                        <p><?php echo $attorney_email; ?></p>
-                                    </li>
-                                    <li>
-                                        <div class="name-info">Phone</div>
-                                        <p>+<?php echo $attorney_contact; ?></p>
-                                    </li>
-                                    <li>
-                                        <div class="name-info">Social Links</div>
-                                        <div class="list-socials">
-                                            <a href="#" class="icon-facebook"><i class="fa fa-facebook"
-                                                    aria-hidden="true"></i></a>
-                                            <a href="#" class="icon-twitter"><i class="fa fa-twitter"
-                                                    aria-hidden="true"></i></a>
-                                            <a href="#" class="icon-linkedin"><i class="fa fa-linkedin"
-                                                    aria-hidden="true"></i></a>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-right">
-                            <div class="introduce-attorneys">
-                                <h4 class="title">About  <?php echo ucwords($attorney_name); ?> :</h4>
-                                <div class="text">
-                                    <p>
-                                    <?php echo $attorney_desp; ?>
-                                    </p>
+<div class="attorneys-single">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-12">
+                <div class="attorneys-single-warp d-md-flex">
+                    <div class="col-left">
+                        <div class="personal-details">
+                            <div class="featured-post">
+                                <div class="entry-image">
+                                    <img src="../admin-dashboard/template/images/uploads/<?php echo $attorney_image; ?>" alt="images">
                                 </div>
                             </div>
-                            <div class="flat-question">
-                                <div class="accordion">
-                                    <div class="accordion-toggle line active">
-                                        <div class="toggle-title d-flex align-items-center active">
-                                            <div class="icon"><i class="fa fa-thumb-tack" aria-hidden="true"></i></div>
-                                            <h5 class="name d-flex align-items-sm-center">Skill</h5>
-                                        </div>
-                                        <div class="toggle-content">
-                                            <div class="skillbar-item">
-                                                <h6 class="skillbar-title">Primary Law</h6>
-                                                <h6 class="skill-bar-percent">90%</h6>
-                                                <div class="skillbar" data-percent="90%">
-                                                    <div class="skillbar-bar"></div>
-                                                </div>
-                                            </div>
-                                            <div class="skillbar-item">
-                                                <h6 class="skillbar-title">Business Law</h6>
-                                                <h6 class="skill-bar-percent">97%</h6>
-                                                <div class="skillbar" data-percent="97%">
-                                                    <div class="skillbar-bar"></div>
-                                                </div>
-                                            </div>
-                                            <div class="skillbar-item">
-                                                <h6 class="skillbar-title">Finalcial Law</h6>
-                                                <h6 class="skill-bar-percent">70%</h6>
-                                                <div class="skillbar" data-percent="70%">
-                                                    <div class="skillbar-bar"></div>
-                                                </div>
-                                            </div>
-                                            <div class="skillbar-item">
-                                                <h6 class="skillbar-title">Immigration Law</h6>
-                                                <h6 class="skill-bar-percent">80%</h6>
-                                                <div class="skillbar" data-percent="80%">
-                                                    <div class="skillbar-bar"></div>
-                                                </div>
-                                            </div>
-                                        </div>
+                            <ul class="attorneys-info-sn">
+                                <li>
+                                    <h3 class="name-info name-size">Advocate <?php echo ucwords($attorney_name); ?>
+                                    </h3>
+                                    <p><?php echo $attorney_service; ?></p>
+                                </li>
+                                <li>
+                                    <div class="name-info">Location</div>
+                                    <p><?php echo $attorney_location; ?></p>
+                                </li>
+                                <li>
+                                    <div class="name-info">Email</div>
+                                    <p><?php echo $attorney_email; ?></p>
+                                </li>
+                                <li>
+                                    <div class="name-info">Phone</div>
+                                    <p>+<?php echo $attorney_contact; ?></p>
+                                </li>
+                                <li>
+                                    <div class="name-info">Social Links</div>
+                                    <div class="list-socials">
+                                        <a href="#" class="icon-facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                        <a href="#" class="icon-twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                        <a href="#" class="icon-linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
                                     </div>
-                                    <div class="accordion-toggle line">
-                                        <div class="toggle-title d-flex align-items-center">
-                                            <div class="icon"><i class="fa fa-address-book-o" aria-hidden="true"></i>
-                                            </div>
-                                            <h5 class="name d-flex align-items-sm-center">Education & Training</h5>
-                                        </div>
-                                        <div class="toggle-content">
-                                            <div class="skillbar-item">
-                                                <h6 class="skillbar-title">Primary Law</h6>
-                                                <h6 class="skill-bar-percent">90%</h6>
-                                                <div class="skillbar" data-percent="90%">
-                                                    <div class="skillbar-bar"></div>
-                                                </div>
-                                            </div>
-                                            <div class="skillbar-item">
-                                                <h6 class="skillbar-title">Business Law</h6>
-                                                <h6 class="skill-bar-percent">97%</h6>
-                                                <div class="skillbar" data-percent="97%">
-                                                    <div class="skillbar-bar"></div>
-                                                </div>
-                                            </div>
-                                            <div class="skillbar-item">
-                                                <h6 class="skillbar-title">Finalcial Law</h6>
-                                                <h6 class="skill-bar-percent">70%</h6>
-                                                <div class="skillbar" data-percent="70%">
-                                                    <div class="skillbar-bar"></div>
-                                                </div>
-                                            </div>
-                                            <div class="skillbar-item">
-                                                <h6 class="skillbar-title">Immigration Law</h6>
-                                                <h6 class="skill-bar-percent">80%</h6>
-                                                <div class="skillbar" data-percent="80%">
-                                                    <div class="skillbar-bar"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-toggle line">
-                                        <div class="toggle-title d-flex align-items-center">
-                                            <div class="icon"><i class="fa fa-folder-o" aria-hidden="true"></i></div>
-                                            <h5 class="name d-flex align-items-sm-center">Career & Experience</h5>
-                                        </div>
-                                        <div class="toggle-content">
-                                            <div class="skillbar-item">
-                                                <h6 class="skillbar-title">Primary Law</h6>
-                                                <h6 class="skill-bar-percent">90%</h6>
-                                                <div class="skillbar" data-percent="90%">
-                                                    <div class="skillbar-bar"></div>
-                                                </div>
-                                            </div>
-                                            <div class="skillbar-item">
-                                                <h6 class="skillbar-title">Business Law</h6>
-                                                <h6 class="skill-bar-percent">97%</h6>
-                                                <div class="skillbar" data-percent="97%">
-                                                    <div class="skillbar-bar"></div>
-                                                </div>
-                                            </div>
-                                            <div class="skillbar-item">
-                                                <h6 class="skillbar-title">Finalcial Law</h6>
-                                                <h6 class="skill-bar-percent">70%</h6>
-                                                <div class="skillbar" data-percent="70%">
-                                                    <div class="skillbar-bar"></div>
-                                                </div>
-                                            </div>
-                                            <div class="skillbar-item">
-                                                <h6 class="skillbar-title">Immigration Law</h6>
-                                                <h6 class="skill-bar-percent">80%</h6>
-                                                <div class="skillbar" data-percent="80%">
-                                                    <div class="skillbar-bar"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-toggle line">
-                                        <div class="toggle-title d-flex align-items-center">
-                                            <div class="icon"><i class="fa fa-trophy" aria-hidden="true"></i></div>
-                                            <h5 class="name d-flex align-items-sm-center">Awards & Achivment</h5>
-                                        </div>
-                                        <div class="toggle-content">
-                                            <div class="skillbar-item">
-                                                <h6 class="skillbar-title">Primary Law</h6>
-                                                <h6 class="skill-bar-percent">90%</h6>
-                                                <div class="skillbar" data-percent="90%">
-                                                    <div class="skillbar-bar"></div>
-                                                </div>
-                                            </div>
-                                            <div class="skillbar-item">
-                                                <h6 class="skillbar-title">Business Law</h6>
-                                                <h6 class="skill-bar-percent">97%</h6>
-                                                <div class="skillbar" data-percent="97%">
-                                                    <div class="skillbar-bar"></div>
-                                                </div>
-                                            </div>
-                                            <div class="skillbar-item">
-                                                <h6 class="skillbar-title">Finalcial Law</h6>
-                                                <h6 class="skill-bar-percent">70%</h6>
-                                                <div class="skillbar" data-percent="70%">
-                                                    <div class="skillbar-bar"></div>
-                                                </div>
-                                            </div>
-                                            <div class="skillbar-item">
-                                                <h6 class="skillbar-title">Immigration Law</h6>
-                                                <h6 class="skill-bar-percent">80%</h6>
-                                                <div class="skillbar" data-percent="80%">
-                                                    <div class="skillbar-bar"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-12">
-                    <div class="sidebar mg-sidebar-res">
-                        <div class="widget widget-list-common">
-                            <h3 class="widget-title"><span>Other Attorneys</span></h3>
-                            <ul>
-                                <?php
-                                if(mysqli_num_rows($allResult)>0){
-                                    while($rows = mysqli_fetch_assoc($allResult)){
-                                        $all_attorney_id = $rows['id'];
-                                        $all_attorney_name = $rows['fullname'];
-                                        $all_attorney_services = $rows['services'];
-                                        ?>
-                                         <li><a href="attorney-profile.php?id=<?php echo $all_attorney_id;?>"><?php echo $all_attorney_name;?></a></li>
-                                        <?php
-                                    }
-                                }
-                                ?>
+                                </li>
                             </ul>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div><!-- attorneys-single -->
-    <div class="featured-banner">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-sm-12">
-                    <div class="content">
-                        <h6 class="title">Lets solve your problem today</h6>
-                        <p>Lorem ipsum dolor sit amet, consecte dunt ut labore</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-12">
-                    <div class="fl-btn hvr-vertical">
-                        <a href="attorney-app.php">Book Your Appointment</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!-- featured-banner -->
-    <footer id="footer" class="footer">
-        <div class="footer-widgets">
-            <div class="container">
-                <div class="footer-top">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="widget widget-contact mg-footer-mbb">
-                                <h2 class="widget-title">Contact</h2>
-                                <div class="content">
-                                    <ul>
-                                        <li><span class="text address">20, Bardeshi, Amin Bazar Savar, Dhaka -
-                                                1348</span></li>
-                                        <li><span class="text phone">123.456.7890</span></li>
-                                        <li><span class="text email">hello@finelaw.com</span></li>
-                                    </ul>
-                                </div>
+                    <div class="col-right">
+                        <div class="introduce-attorneys">
+                            <h4 class="title">About <?php echo ucwords($attorney_name); ?> :</h4>
+                            <div class="text">
+                                <p>
+                                    <?php echo $attorney_desp; ?>
+                                </p>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="widget widget-services mg-footer-mbb">
-                                <h2 class="widget-title">About</h2>
-                                <div class="content">
-                                    <ul class="widget-menu">
-                                        <li><a href="#">About us</a></li>
-                                        <li><a href="#">Our Team</a></li>
-                                        <li><a href="#">Career</a></li>
-                                        <li><a href="#">Practice Area</a></li>
-                                        <li><a href="#">Help Guide</a></li>
-                                        <li><a href="#">Tutorials</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="widget widget-services mg-footer-mbs">
-                                <h2 class="widget-title">Help Desk</h2>
-                                <div class="content">
-                                    <ul class="widget-menu">
-                                        <li><a href="#">Customer Care</a></li>
-                                        <li><a href="#">Legal Help</a></li>
-                                        <li><a href="#">Service</a></li>
-                                        <li><a href="#">Donation</a></li>
-                                        <li><a href="#">Child Care</a></li>
-                                        <li><a href="#">Presonal Care</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="widget widget-newsletter">
-                                <h2 class="widget-title">Newsletter</h2>
-                                <div class="content">
-                                    <p>Polore eu fugiat nulla pariatur Excepteur sint occaecat cupidat at non tomake
-                                        bole</p>
-                                    <form action="#" class="form-email-footer">
-                                        <input type="text" class="your-email" placeholder="Your email">
-                                        <button class="btn-email">
-                                            <i class="fa fa-envelope" aria-hidden="true"></i>
-                                        </button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-bottom">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-12">
-                            <div class="widget widget-text mg-footer-mbb">
-                                <div class="content">
-                                    <div class="images-logo">
-                                        <img src="images/footer/07.png" alt="images">
+                        <div class="flat-question">
+                            <div class="accordion">
+                                <div class="accordion-toggle line active">
+                                    <div class="toggle-title d-flex align-items-center active">
+                                        <div class="icon"><i class="fa fa-thumb-tack" aria-hidden="true"></i></div>
+                                        <h5 class="name d-flex align-items-sm-center">Skill</h5>
                                     </div>
-                                    <p>
-                                        Naboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                                        Excepteur sint occaecat cupidatat non proiden
-                                    </p>
-                                    <div class="list-socials">
-                                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                        <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                                        <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                    <div class="toggle-content">
+                                        <div class="skillbar-item">
+                                            <h6 class="skillbar-title">Primary Law</h6>
+                                            <h6 class="skill-bar-percent">90%</h6>
+                                            <div class="skillbar" data-percent="90%">
+                                                <div class="skillbar-bar"></div>
+                                            </div>
+                                        </div>
+                                        <div class="skillbar-item">
+                                            <h6 class="skillbar-title">Business Law</h6>
+                                            <h6 class="skill-bar-percent">97%</h6>
+                                            <div class="skillbar" data-percent="97%">
+                                                <div class="skillbar-bar"></div>
+                                            </div>
+                                        </div>
+                                        <div class="skillbar-item">
+                                            <h6 class="skillbar-title">Finalcial Law</h6>
+                                            <h6 class="skill-bar-percent">70%</h6>
+                                            <div class="skillbar" data-percent="70%">
+                                                <div class="skillbar-bar"></div>
+                                            </div>
+                                        </div>
+                                        <div class="skillbar-item">
+                                            <h6 class="skillbar-title">Immigration Law</h6>
+                                            <h6 class="skill-bar-percent">80%</h6>
+                                            <div class="skillbar" data-percent="80%">
+                                                <div class="skillbar-bar"></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-5 col-sm-5">
-                            <div class="widget widget-gallery mg-footer-mbs clearfix">
-                                <h2 class="widget-title">Gallery</h2>
-                                <div class="content">
-                                    <div class="images-gallery hv-gallery-icon">
-                                        <div class="overlay-gallery">
-                                            <div class="item-link">
-                                                <a href="#" class="popup-gallery"><i class="fa fa-search"
-                                                        aria-hidden="true"></i></a>
-                                            </div>
+                                <div class="accordion-toggle line">
+                                    <div class="toggle-title d-flex align-items-center">
+                                        <div class="icon"><i class="fa fa-address-book-o" aria-hidden="true"></i>
                                         </div>
-                                        <img src="images/footer/01.png" alt="images">
+                                        <h5 class="name d-flex align-items-sm-center">Education & Training</h5>
                                     </div>
-                                    <div class="images-gallery hv-gallery-icon">
-                                        <div class="overlay-gallery">
-                                            <div class="item-link">
-                                                <a href="#" class="popup-gallery"><i class="fa fa-search"
-                                                        aria-hidden="true"></i></a>
+                                    <div class="toggle-content">
+                                        <div class="skillbar-item">
+                                            <h6 class="skillbar-title">Primary Law</h6>
+                                            <h6 class="skill-bar-percent">90%</h6>
+                                            <div class="skillbar" data-percent="90%">
+                                                <div class="skillbar-bar"></div>
                                             </div>
                                         </div>
-                                        <img src="images/footer/02.png" alt="images">
-                                    </div>
-                                    <div class="images-gallery hv-gallery-icon">
-                                        <div class="overlay-gallery">
-                                            <div class="item-link">
-                                                <a href="#" class="popup-gallery"><i class="fa fa-search"
-                                                        aria-hidden="true"></i></a>
+                                        <div class="skillbar-item">
+                                            <h6 class="skillbar-title">Business Law</h6>
+                                            <h6 class="skill-bar-percent">97%</h6>
+                                            <div class="skillbar" data-percent="97%">
+                                                <div class="skillbar-bar"></div>
                                             </div>
                                         </div>
-                                        <img src="images/footer/03.png" alt="images">
-                                    </div>
-                                    <div class="images-gallery hv-gallery-icon">
-                                        <div class="overlay-gallery">
-                                            <div class="item-link">
-                                                <a href="#" class="popup-gallery"><i class="fa fa-search"
-                                                        aria-hidden="true"></i></a>
+                                        <div class="skillbar-item">
+                                            <h6 class="skillbar-title">Finalcial Law</h6>
+                                            <h6 class="skill-bar-percent">70%</h6>
+                                            <div class="skillbar" data-percent="70%">
+                                                <div class="skillbar-bar"></div>
                                             </div>
                                         </div>
-                                        <img src="images/footer/04.png" alt="images">
-                                    </div>
-                                    <div class="images-gallery hv-gallery-icon">
-                                        <div class="overlay-gallery">
-                                            <div class="item-link">
-                                                <a href="#" class="popup-gallery"><i class="fa fa-search"
-                                                        aria-hidden="true"></i></a>
+                                        <div class="skillbar-item">
+                                            <h6 class="skillbar-title">Immigration Law</h6>
+                                            <h6 class="skill-bar-percent">80%</h6>
+                                            <div class="skillbar" data-percent="80%">
+                                                <div class="skillbar-bar"></div>
                                             </div>
                                         </div>
-                                        <img src="images/footer/05.png" alt="images">
-                                    </div>
-                                    <div class="images-gallery hv-gallery-icon">
-                                        <div class="overlay-gallery">
-                                            <div class="item-link">
-                                                <a href="#" class="popup-gallery"><i class="fa fa-search"
-                                                        aria-hidden="true"></i></a>
-                                            </div>
-                                        </div>
-                                        <img src="images/footer/06.png" alt="images">
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-7 col-sm-7">
-                            <div class="widget widget-twitter">
-                                <h2 class="widget-title">Recent Tweets</h2>
-                                <div class="content">
-                                    <div class="tw-wrap">
-                                        <div class="text-link">
-                                            Lco lodoami tomader lok amitomader vai amar ar kisu naikeho <a
-                                                href="#">http://bit.ly/7asF34</a>
+                                <div class="accordion-toggle line">
+                                    <div class="toggle-title d-flex align-items-center">
+                                        <div class="icon"><i class="fa fa-folder-o" aria-hidden="true"></i></div>
+                                        <h5 class="name d-flex align-items-sm-center">Career & Experience</h5>
+                                    </div>
+                                    <div class="toggle-content">
+                                        <div class="skillbar-item">
+                                            <h6 class="skillbar-title">Primary Law</h6>
+                                            <h6 class="skill-bar-percent">90%</h6>
+                                            <div class="skillbar" data-percent="90%">
+                                                <div class="skillbar-bar"></div>
+                                            </div>
                                         </div>
-                                        <div class="text-time"><a href="#">@Fine Law</a> - 2 hours ago</div>
+                                        <div class="skillbar-item">
+                                            <h6 class="skillbar-title">Business Law</h6>
+                                            <h6 class="skill-bar-percent">97%</h6>
+                                            <div class="skillbar" data-percent="97%">
+                                                <div class="skillbar-bar"></div>
+                                            </div>
+                                        </div>
+                                        <div class="skillbar-item">
+                                            <h6 class="skillbar-title">Finalcial Law</h6>
+                                            <h6 class="skill-bar-percent">70%</h6>
+                                            <div class="skillbar" data-percent="70%">
+                                                <div class="skillbar-bar"></div>
+                                            </div>
+                                        </div>
+                                        <div class="skillbar-item">
+                                            <h6 class="skillbar-title">Immigration Law</h6>
+                                            <h6 class="skill-bar-percent">80%</h6>
+                                            <div class="skillbar" data-percent="80%">
+                                                <div class="skillbar-bar"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-toggle line">
+                                    <div class="toggle-title d-flex align-items-center">
+                                        <div class="icon"><i class="fa fa-trophy" aria-hidden="true"></i></div>
+                                        <h5 class="name d-flex align-items-sm-center">Awards & Achivment</h5>
+                                    </div>
+                                    <div class="toggle-content">
+                                        <div class="skillbar-item">
+                                            <h6 class="skillbar-title">Primary Law</h6>
+                                            <h6 class="skill-bar-percent">90%</h6>
+                                            <div class="skillbar" data-percent="90%">
+                                                <div class="skillbar-bar"></div>
+                                            </div>
+                                        </div>
+                                        <div class="skillbar-item">
+                                            <h6 class="skillbar-title">Business Law</h6>
+                                            <h6 class="skill-bar-percent">97%</h6>
+                                            <div class="skillbar" data-percent="97%">
+                                                <div class="skillbar-bar"></div>
+                                            </div>
+                                        </div>
+                                        <div class="skillbar-item">
+                                            <h6 class="skillbar-title">Finalcial Law</h6>
+                                            <h6 class="skill-bar-percent">70%</h6>
+                                            <div class="skillbar" data-percent="70%">
+                                                <div class="skillbar-bar"></div>
+                                            </div>
+                                        </div>
+                                        <div class="skillbar-item">
+                                            <h6 class="skillbar-title">Immigration Law</h6>
+                                            <h6 class="skill-bar-percent">80%</h6>
+                                            <div class="skillbar" data-percent="80%">
+                                                <div class="skillbar-bar"></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -461,60 +224,49 @@ $allResult = mysqli_query($conn, $allAttorneySql);
                     </div>
                 </div>
             </div>
-            <div class="bottom">
-                <div class="container">
-                    <div class="bottom-wrap">
-                        <div class="row">
-                            <div class="col-lg-5 col-md-12">
-                                <div class="copyright">
-                                    <a href="templateshub.net">Templateshub</a>
-                                </div>
-                            </div>
-                            <div class="col-lg-7 col-md-12">
-                                <div class="menu-footer">
-                                    <ul>
-                                        <li><a href="#">Terms & Condition</a></li>
-                                        <li><a href="#">Privacy Policy</a></li>
-                                        <li><a href="#">Legal</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+            <div class="col-lg-2 col-md-12">
+                <div class="sidebar mg-sidebar-res">
+                    <div class="widget widget-list-common">
+                        <h3 class="widget-title"><span>Other Attorneys</span></h3>
+                        <ul>
+                            <?php
+                            if (mysqli_num_rows($allResult) > 0) {
+                                while ($rows = mysqli_fetch_assoc($allResult)) {
+                                    $all_attorney_id = $rows['id'];
+                                    $all_attorney_name = $rows['fullname'];
+                                    $all_attorney_services = $rows['services'];
+                            ?>
+                                    <li><a href="attorney-profile.php?id=<?php echo $all_attorney_id; ?>"><?php echo $all_attorney_name; ?></a></li>
+                            <?php
+                                }
+                            }
+                            ?>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <a id="scroll-top" class="show"></a>
-    </footer><!-- footer -->
+    </div>
+</div><!-- attorneys-single -->
+<div class="featured-banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-sm-12">
+                <div class="content">
+                    <h6 class="title">Lets solve your problem today</h6>
+                    <p>Lorem ipsum dolor sit amet, consecte dunt ut labore</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-12">
+                <div class="fl-btn hvr-vertical">
+                    <a href="attorney-app.php">Book Your Appointment</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- featured-banner -->
 
-    <script src="javascript/jquery.min.js"></script>
-    <script src="javascript/plugins.js"></script>
-    <script src="javascript/jquery-ui.js"></script>
-    <script src="javascript/gmap3.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCo_pcAdFNbTDCAvMwAD19oRTuEmb9M50c"></script>
-    <script src="javascript/jquery-isotope.js"></script>
-    <script src="javascript/equalize.min.js"></script>
-    <script src="javascript/jquery-countTo.js"></script>
-    <script src="javascript/flex-slider.min.js"></script>
-    <script src="javascript/main.js"></script>
-
-    <!-- slider -->
-    <script src="rev-slider/js/jquery.themepunch.tools.min.js"></script>
-    <script src="rev-slider/js/jquery.themepunch.revolution.min.js"></script>
-    <script src="javascript/rev-slider.js"></script>
-
-    <!-- Load Extensions only on Local File Systems ! The following part can be removed on Server for On Demand Loading -->
-    <script src="rev-slider/js/extensions/extensionsrevolution.extension.actions.min.js"></script>
-    <script src="rev-slider/js/extensions/extensionsrevolution.extension.carousel.min.js"></script>
-    <script src="rev-slider/js/extensions/extensionsrevolution.extension.kenburn.min.js"></script>
-    <script src="rev-slider/js/extensions/extensionsrevolution.extension.layeranimation.min.js"></script>
-    <script src="rev-slider/js/extensions/extensionsrevolution.extension.migration.min.js"></script>
-    <script src="rev-slider/js/extensions/extensionsrevolution.extension.navigation.min.js"></script>
-    <script src="rev-slider/js/extensions/extensionsrevolution.extension.parallax.min.js"></script>
-    <script src="rev-slider/js/extensions/extensionsrevolution.extension.slideanims.min.js"></script>
-    <script src="rev-slider/js/extensions/extensionsrevolution.extension.video.min.js"></script>
-</body>
-
-<!-- attorneys-single.php  22 Nov 2019 12:06:35 GMT -->
-
-</html>
+<?php
+require_once "partials/footer.php";
+?>
+<!--footer -->
