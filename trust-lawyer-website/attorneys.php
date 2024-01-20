@@ -1,9 +1,8 @@
-<?php
-require_once "config.php";
-$sql = "SELECT * FROM lawyers";
-$result = mysqli_query($conn, $sql);
+<?php 
 require_once "partials/header.php";
 
+$sql = "SELECT * FROM lawyers";
+$result = mysqli_query($conn, $sql);
 ?>
 <div class="page-title">
     <div class="container">
@@ -95,41 +94,43 @@ require_once "partials/header.php";
         <div class="attorneys-details" id="attorneys-detail">
             <div class="row">
                 <?php
-if (mysqli_num_rows($result) > 0) {
-    while ($rows = mysqli_fetch_assoc($result)) {
-        ?>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="attorneys-info attorneys-hv-link mg-60" id="content-block">
-                        <div class="attorneys-avatar hv-link-content">
-                            <div class="image">
-                                <img src="../admin-dashboard/template/images/uploads/<?php echo $rows['image']; ?>"
-                                    alt="images">
-                            </div>
-                            <div class="overlay-box">
-                                <div class="content">
-                                    <a href="attorney-profile.php?id=<?php echo $rows['id'];?>">View Profile</a>
+                if (mysqli_num_rows($result) > 0) {
+                    while ($rows = mysqli_fetch_assoc($result)) {
+                ?>
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="attorneys-info attorneys-hv-link mg-60" id="content-block">
+                                <div class="attorneys-avatar hv-link-content">
+                                    <div class="image">
+                                        <img src="../admin-dashboard/template/images/uploads/<?php echo $rows['image']; ?>" alt="images">
+                                    </div>
+                                    <div class="overlay-box">
+                                        <div class="content">
+                                            <a href="attorney-profile.php?id=<?php echo $rows['id']; ?>">View Profile</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="attorneys-content w-100">
+                                    <div class="content-wrap w-100">
+                                        <h3 class="name"><a href="#">
+                                                <?php echo ucwords("Name: " . $rows['fullname']); ?>
+                                            </a></h3>
+                                        <p class="position">
+                                            <?php echo "Service: " . $rows['services']; ?>
+                                        </p>
+                                        <p class="location ">
+                                            <?php echo "Location: " . $rows['location']; ?>
+                                        </p>
+                                    </div>
+                                    <button>
+                                        <a class="d-block text-white" href="attorney-profile.php?id=<?php echo $rows['id']; ?>">Book Appointment</a>
+                                    </button>
                                 </div>
                             </div>
                         </div>
-                        <div class="attorneys-content">
-                            <div class="content-wrap">
-                                <h3 class="name"><a href="#">
-                                        <?php echo ucwords("Name: " . $rows['fullname']); ?>
-                                    </a></h3>
-                                <p class="position">
-                                    <?php echo "Service: " . $rows['services']; ?>
-                                </p>
-                                <p class="location ">
-                                    <?php echo "Location: " . $rows['location']; ?>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <?php
-}
-}
-?>
+                    }
+                }
+                ?>
             </div>
         </div>
     </div>
@@ -145,7 +146,7 @@ if (mysqli_num_rows($result) > 0) {
             </div>
             <div class="col-lg-4 col-sm-12">
                 <div class="fl-btn hvr-vertical">
-                    <a href="attorney-app.php">Book Your Appointment</a>
+                    <a href="attorneys.php">Book Your Appointment</a>
                 </div>
             </div>
         </div>
@@ -153,24 +154,24 @@ if (mysqli_num_rows($result) > 0) {
 </div><!-- featured-banner -->
 
 <script>
-let serviceDiv = document.getElementById('serviceSearchDiv');
-let locationDiv = document.getElementById('locationSearchDiv');
-document.getElementById('searchByService').addEventListener('click', function() {
-    locationDiv.style.display = 'none';
-    serviceDiv.style.display = 'block';
-})
-let searchMethod = 'service';
-performSearch(searchMethod);
-document.getElementById('searchByLocation').addEventListener('click', function() {
-    serviceDiv.style.display = 'none';
-    locationDiv.style.display = 'block';
-    let searchMethod = 'location';
+    let serviceDiv = document.getElementById('serviceSearchDiv');
+    let locationDiv = document.getElementById('locationSearchDiv');
+    document.getElementById('searchByService').addEventListener('click', function() {
+        locationDiv.style.display = 'none';
+        serviceDiv.style.display = 'block';
+    })
+    let searchMethod = 'service';
     performSearch(searchMethod);
-})
+    document.getElementById('searchByLocation').addEventListener('click', function() {
+        serviceDiv.style.display = 'none';
+        locationDiv.style.display = 'block';
+        let searchMethod = 'location';
+        performSearch(searchMethod);
+    })
 
 
-function performSearch(searchMethod) {
-    if (searchMethod === 'service') {
+    function performSearch(searchMethod) {
+        if (searchMethod === 'service') {
 
             document.getElementById("serviceSearchOption").addEventListener('input', function() {
                 let selectedOpt = document.getElementById('serviceSearchOption').value;

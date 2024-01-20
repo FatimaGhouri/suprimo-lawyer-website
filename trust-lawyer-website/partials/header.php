@@ -11,7 +11,18 @@ if (isset($_SESSION["id"]) && $_SESSION["userType"] === "lawyer") {
         $loginLawyerImage = $loginLawyer['image'];
     }
 }
-echo '
+ 
+if (isset($fileName)) {
+    function activeNav($path)
+    {
+        global $fileName;
+        if ($path == $fileName) {
+            return 'active';
+        }
+        return '';
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -19,7 +30,7 @@ echo '
 
 <head>
     <meta charset="UTF-8">
-    <title>Suprimo</title>
+    <title>Suprimo </title>
 
     <!-- Mobile Specific Metas-->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -74,8 +85,7 @@ echo '
         <div class="container">
             <div class="flex-header">
                 <div id="logo" class="logo">
-                    <a href="index.html" title="Logo"><img src="images/logo/logo.png" data-width="211" data-height="34"
-                            alt="images" ></a>
+                    <a href="index.html" title="Logo"><img src="images/logo/logo.png" data-width="211" data-height="34" alt="images"></a>
                 </div>
                 <div class="content-menu">
                     <div class="nav-wrap">
@@ -83,58 +93,57 @@ echo '
                         <nav id="mainnav" class="mainnav">
                             <ul class="menu">
                                 <li>
-                                    <a href="index.php" class="active">Home</a>
+                                    <a href="index.php" class="<?= activeNav('index.php') ?>">Home</a>
                                 </li>
                                 <li>
-                                    <a href="about.php">About</a>
+                                    <a href="about.php" class="<?= activeNav('about.php') ?>">About</a>
                                 </li>
                                 <li>
-                                    <a href="practice-area.php">Practice Areas</a>
+                                    <a href="practice-area.php" class="<?= activeNav('practice-area.php') ?>">Practice Areas</a>
                                 </li>
                                 <li>
-                                    <a href="attorneys.php">Attorneys</a>
+                                    <a href="attorneys.php" class="<?= activeNav('attorneys.php') ?>">Attorneys</a>
                                 </li>
                                 <li>
-                                    <a href="blog.php">News</a>
+                                    <a href="blog.php" class="<?= activeNav('blog.php') ?>">News</a>
                                 </li>
                                 <li>
-                                    <a href="contact.php">Contact</a>
-                                </li>';?>
+                                    <a href="contact.php" class="<?= activeNav('contact.php') ?>">Contact</a>
+                                </li>
 
-<?php
-if (!isset($_SESSION['login'])) {
+                                <?php
+                                if (!isset($_SESSION['login'])) {
 
-    echo '
+                                    echo '
                                     <li class="navBtns ">
                                         <button class="navBtn-1 fl-btn hvr-vertical"><a href="registrationForm.php">Join</a></button>
                                         <button class="navBtn-2 fl-btn hvr-vertical"><a href="loginForm.php">LogIn</a></button>
                                     </li>';
-
-}
-?>
-<?php
-if (isset($_SESSION['login']) && $_SESSION["login"] === true) {
-    if(isset($_SESSION['userType']) && $_SESSION['userType'] === "lawyer"){
-        echo ' <li class="user-profile-pic">
+                                }
+                                ?>
+                                <?php
+                                if (isset($_SESSION['login']) && $_SESSION["login"] === true) {
+                                    if (isset($_SESSION['userType']) && $_SESSION['userType'] === "lawyer") {
+                                        echo ' <li class="user-profile-pic">
         <a href="User-panel/lawyerPanel.php">
             <img src="../admin-dashboard/template/images/uploads/' . $loginLawyerImage . '" alt="" class="loginProfileImg">
             My Profile
         </a>
     </li>';
-    }
-    if(isset($_SESSION['userType']) && $_SESSION['userType'] === "customer"){
-        echo ' <li class="user-profile-pic">
+                                    }
+                                    if (isset($_SESSION['userType']) && $_SESSION['userType'] === "customer") {
+                                        echo ' <li class="user-profile-pic">
         <a href="User-panel/clientPanel.php">
             <img src="../admin-dashboard/template/images/uploads/male_dummy.png" alt="" class="loginProfileImg">
             My Profile
         </a>
     </li>';
-    }
-}
-?>
+                                    }
+                                }
+                                ?>
 
-<?php
-echo '
+                                <?php
+                                echo '
 </ul>
 </nav>
 </div>
@@ -143,4 +152,4 @@ echo '
 </div>
 </header>
 ';
-?>
+                                ?>

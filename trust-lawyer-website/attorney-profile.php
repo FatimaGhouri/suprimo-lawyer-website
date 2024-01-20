@@ -226,20 +226,38 @@ require_once "partials/header.php";
                 </div>
             </div>
             <div class="col-lg-4 col-md-12">
-                <div class="widget">
-                    <h3 class="widget-title"><span>Appointment</span></h3>
-                    <form id="appointmentForm" class="appointment-form mb-4" method="post">
-                        <div class="form-group">
-                            <label for="appDateTime">Appointment Date and Time:</label>
-                            <input type="datetime-local" id="appDateTime" name="appDateTime" required>
-                        </div>
-                        <div class="form-group">
-                            <div class="cosulting hvr-vertical">
-
-                                <input type="submit" class="book-slot-btn " name="appSubmit" value="Book Your Appointment">
+                <div class="widget w-100 d-flex position-relative mb-5 flex-column">
+                    <?php
+                    if (isset($_SESSION["id"]) && $_SESSION["userType"] === "customer") { ?>
+                        <h3 class="widget-title"><span>Appointment</span></h3>
+                        <form id="appointmentForm" class="appointment-form mb-4" method="post">
+                            <div class="form-group">
+                                <label for="appDateTime">Appointment Date and Time:</label>
+                                <input type="datetime-local" id="appDateTime" name="appDateTime" required>
                             </div>
+                            <div class="form-group">
+                                <div class="cosulting hvr-vertical">
+
+                                    <input type="submit" class="book-slot-btn " name="appSubmit" value="Book Your Appointment">
+                                </div>
+                            </div>
+                        </form>
+                    <?php } else {
+                    ?>
+                        <div class="flat-contact-us d-lg-flex align-items-center">
+
+                            <a href="loginForm.php" class="cosulting hvr-vertical">
+                                Signin for Appointment
+                                <div class="border-animate">
+                                    <div class="top"></div>
+                                    <div class="right"></div>
+                                    <div class="bottomb"></div>
+                                    <div class="left"></div>
+                                </div>
+                            </a>
                         </div>
-                    </form>
+                    <?php
+                    } ?>
                 </div>
                 <div class="sidebar mg-sidebar-res">
                     <div class="widget widget-list-common">
@@ -275,7 +293,7 @@ require_once "partials/header.php";
             </div>
             <div class="col-lg-4 col-sm-12">
                 <div class="fl-btn hvr-vertical">
-                    <a href="attorney-app.php">Book Your Appointment</a>
+                    <a href="attorneys.php">Book Your Appointment</a>
                 </div>
             </div>
         </div>
@@ -285,8 +303,7 @@ require_once "partials/header.php";
 <?php
 require_once "partials/footer.php";
 ?>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="./javascript/snackbar.js"></script>
+ <script src="./javascript/snackbar.js"></script>
 <!--footer -->
 <script>
     document.addEventListener('DOMContentLoaded', function() {
