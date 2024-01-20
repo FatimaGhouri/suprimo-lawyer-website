@@ -1,7 +1,7 @@
 <?php
-require_once "config.php"; 
+require_once "config.php";
 require_once "partials/header.php";
-if(isset($_GET['id'])){
+if (isset($_GET['id'])) {
     $attorneyId = $_GET['id'];
     $searchSql = "SELECT* FROM lawyers WHERE id = '$attorneyId'";
     $result = mysqli_query($conn, $searchSql);
@@ -19,13 +19,38 @@ if(isset($_GET['id'])){
 $allAttorneySql = "SELECT * FROM lawyers";
 $allResult = mysqli_query($conn, $allAttorneySql);
 
+if (isset($_POST['appSubmit'])) {
+    $attorneyId = $attorneyId;
+    $appDateTime = $_POST['appDateTime'];
+
+    if (isset($_SESSION["id"]) && $_SESSION["userType"] === "customer" && isset($appDateTime)) {
+        $customerId = $_SESSION["id"];
+
+        // Check if the appointment date is not in the past
+        $currentDateTime = date('Y-m-d H:i:s');
+        if (strtotime($appDateTime) > strtotime($currentDateTime)) {
+            $insertSql = "INSERT INTO appointments(customers_id, Lawyers_id, appDateTime) VALUES ('$customerId', '$attorneyId', '$appDateTime')";
+            $insertResult = mysqli_query($conn, $insertSql);
+
+            if ($insertResult) {
+                echo "Slot booked successfully";
+            } else {
+                echo "Got some issue in booking a slot";
+            }
+        } else {
+            echo "Appointment date cannot be in the past";
+        }
+    } else {
+        echo "No such customer found";
+    }
+}
 
 require_once "partials/header.php";
 ?>
 <div class="attorneys-single">
     <div class="container">
         <div class="row">
-            <div class="col-lg-9 col-md-12">
+            <div class="col-lg-8 col-md-12">
                 <div class="attorneys-single-warp d-md-flex">
                     <div class="col-left">
                         <div class="personal-details">
@@ -224,7 +249,22 @@ require_once "partials/header.php";
                     </div>
                 </div>
             </div>
-            <div class="col-lg-2 col-md-12">
+            <div class="col-lg-4 col-md-12">
+                <div class="widget">
+                    <h3 class="widget-title"><span>Appointment</span></h3>
+                    <form id="appointmentForm" class="appointment-form mb-4" method="post">
+                        <div class="form-group">
+                            <label for="appDateTime">Appointment Date and Time:</label>
+                            <input type="datetime-local" id="appDateTime" name="appDateTime" required>
+                        </div>
+                        <div class="form-group">
+                            <div class="cosulting hvr-vertical">
+
+                                <input type="submit" class="book-slot-btn " name="appSubmit" value="Book Your Appointment">
+                            </div>
+                        </div>
+                    </form>
+                </div>
                 <div class="sidebar mg-sidebar-res">
                     <div class="widget widget-list-common">
                         <h3 class="widget-title"><span>Other Attorneys</span></h3>
@@ -270,3 +310,32 @@ require_once "partials/header.php";
 require_once "partials/footer.php";
 ?>
 <!--footer -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var appDateTimeInput = document.getElementById('appDateTime');
+
+        // Disable past dates
+        var today = new Date();
+        var formattedToday = today.toISOString().slice(0, 16);
+        appDateTimeInput.setAttribute('min', formattedToday);
+
+        // Define specific future dates to allow (replace these dates with your own)
+        var allowedDates = ["2024-01-30T12:00", "2024-02-10T15:30"];
+
+        // Add event listener to dynamically update allowed dates
+        appDateTimeInput.addEventListener('input', function() {
+            var selectedDate = new Date(appDateTimeInput.value);
+
+            // Check if the selected date is in the allowed dates array
+            if (allowedDates.some(function(date) {
+                    return selectedDate.toISOString().slice(0, 16) === date;
+                })) {
+                // Date is allowed
+                appDateTimeInput.setCustomValidity('');
+            } else {
+                // Date is not allowed
+                appDateTimeInput.setCustomValidity('Invalid date');
+            }
+        });
+    });
+</script>
