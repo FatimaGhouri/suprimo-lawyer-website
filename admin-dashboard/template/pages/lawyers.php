@@ -83,7 +83,7 @@ include_once "../partials/_header.php";
                                             <input type="text" class="upper-box-1" id="searchQuery"
                                                 placeholder="Search for lawyers..">
                                             <a href="addLawyers.php" class="upper-box-2"><button type="button"
-                                                    class="btn btn-info mt-3 mb-3">Add new Lawyers</button></a>
+                                                    class="btn btn-primary float-end mt-3 mb-3">Add new Lawyers</button></a>
                                         </div>
                                         <table class="table table-striped" id="lawyerTable">
                                             <thead>

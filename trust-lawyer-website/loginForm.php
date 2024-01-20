@@ -94,7 +94,9 @@ if (isset($_POST['loginLawyer'])) {
         h2 {
             color: #cca776;
             text-align: center;
-            margin-bottom: 15px;
+            margin-bottom: 42px;
+            margin-top: 40px;
+            font-size: 35px;
         }
 
         label {
@@ -161,7 +163,7 @@ if (isset($_POST['loginLawyer'])) {
             overflow: hidden;
         }
 
-        img {
+        .form_image {
             width: 100%;
             height: 100%;
             display: block;
@@ -238,7 +240,9 @@ if (isset($_POST['loginLawyer'])) {
             position: relative;
             height: 100%;
             flex-direction: column;
-            justify-content: center;
+            /* justify-content: center; */
+            /* align-items: center; */
+            margin-top: 50px;
         }
 
         @media (max-width:767px) {
@@ -269,13 +273,14 @@ if (isset($_POST['loginLawyer'])) {
         <div class="image-container">
             <div class="auth-ovrlay">
                 <!-- <h2>Welcome To Suprimo</h2> -->
-                <img src='./images/logo/logo.png' />
+                <!-- <img src='./images/logo/logo.png' /> -->
             </div>
-            <img src="images/attorneys/reg-form-pic.jpg" alt="Large Image" />
+            <img class="form_image" src="images/attorneys/reg-form-pic.jpg" alt="Large Image" />
         </div>
         <!-- Form container -->
         <div class="form-container d-flex align-items-center w-100">
             <div id="formContent" class="form-content w-100 h-100">
+                <img src="./images/logo/logo.png" style=" width: 50%; height: 45px; margin-top: 70px; margin-left: 130px; ">
                 <!-- Common form panel for both customers and lawyers -->
                 <form id="loginForm" method="POST">
                     <div class="form-panel-1" id="panel-one">
