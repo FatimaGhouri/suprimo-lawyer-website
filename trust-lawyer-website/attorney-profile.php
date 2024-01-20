@@ -19,34 +19,10 @@ if (isset($_GET['id'])) {
 $allAttorneySql = "SELECT * FROM lawyers";
 $allResult = mysqli_query($conn, $allAttorneySql);
 
-if (isset($_POST['appSubmit'])) {
-    $attorneyId = $attorneyId;
-    $appDateTime = $_POST['appDateTime'];
-
-    if (isset($_SESSION["id"]) && $_SESSION["userType"] === "customer" && isset($appDateTime)) {
-        $customerId = $_SESSION["id"];
-
-        // Check if the appointment date is not in the past
-        $currentDateTime = date('Y-m-d H:i:s');
-        if (strtotime($appDateTime) > strtotime($currentDateTime)) {
-            $insertSql = "INSERT INTO appointments(customers_id, Lawyers_id, appDateTime) VALUES ('$customerId', '$attorneyId', '$appDateTime')";
-            $insertResult = mysqli_query($conn, $insertSql);
-
-            if ($insertResult) {
-                echo "Slot booked successfully";
-            } else {
-                echo "Got some issue in booking a slot";
-            }
-        } else {
-            echo "Appointment date cannot be in the past";
-        }
-    } else {
-        echo "No such customer found";
-    }
-}
 
 require_once "partials/header.php";
 ?>
+<link rel="stylesheet" href="./stylesheet/snackbar.min.css">
 <div class="attorneys-single">
     <div class="container">
         <div class="row">
@@ -309,6 +285,8 @@ require_once "partials/header.php";
 <?php
 require_once "partials/footer.php";
 ?>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="./javascript/snackbar.js"></script>
 <!--footer -->
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -319,23 +297,54 @@ require_once "partials/footer.php";
         var formattedToday = today.toISOString().slice(0, 16);
         appDateTimeInput.setAttribute('min', formattedToday);
 
-        // Define specific future dates to allow (replace these dates with your own)
-        var allowedDates = ["2024-01-30T12:00", "2024-02-10T15:30"];
 
-        // Add event listener to dynamically update allowed dates
-        appDateTimeInput.addEventListener('input', function() {
-            var selectedDate = new Date(appDateTimeInput.value);
+    });
+</script>
+<?php
+$appointment_message = "";  // Initialize the variable
 
-            // Check if the selected date is in the allowed dates array
-            if (allowedDates.some(function(date) {
-                    return selectedDate.toISOString().slice(0, 16) === date;
-                })) {
-                // Date is allowed
-                appDateTimeInput.setCustomValidity('');
+if (isset($_POST['appSubmit'])) {
+    $attorneyId = $attorneyId;  // You may want to set this value as needed
+    $appDateTime = $_POST['appDateTime'];
+
+    if (isset($_SESSION["id"]) && $_SESSION["userType"] === "customer" && isset($appDateTime)) {
+        $customerId = $_SESSION["id"];
+        // Check if customer already fill
+        $checkAppointment = mysqli_query($conn, "SELECT * FROM `appointments` WHERE `customers_id` = '$customerId' AND `Lawyers_id` = '$attorneyId' AND `appDateTime` = '$appDateTime'");
+        if (mysqli_num_rows($checkAppointment) == 0) {
+            // Check if the appointment date is not in the past
+            $currentDateTime = date('Y-m-d H:i:s');
+            if (strtotime($appDateTime) > strtotime($currentDateTime)) {
+                $insertSql = "INSERT INTO appointments(customers_id, Lawyers_id, appDateTime) VALUES ('$customerId', '$attorneyId', '$appDateTime')";
+                $insertResult = mysqli_query($conn, $insertSql);
+
+                if ($insertResult) {
+                    $appointment_message = "Slot booked successfully";
+                    $_POST = array(); // lets pretend nothing was posted
+                } else {
+                    $appointment_message = "Got some issue in booking a slot";
+                    $_POST = array(); // lets pretend nothing was posted
+                }
             } else {
-                // Date is not allowed
-                appDateTimeInput.setCustomValidity('Invalid date');
+                $appointment_message = "Appointment date cannot be in the past";
             }
-        });
+        }
+    } else {
+        $appointment_message = "No such customer found";
+    }
+}
+?>
+
+<script>
+    // Use single quotes to prevent issues with string interpolation
+    let message = '<?= $appointment_message ?>';
+    jQuery(document).ready(function() {
+        if (message.trim() !== "") {
+            jQuery("#appointmentForm").trigger('reset');
+            Snackbar.show({
+                pos: 'top-right',
+                text: message,
+            });
+        }
     });
 </script>
