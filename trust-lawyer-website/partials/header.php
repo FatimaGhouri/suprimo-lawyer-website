@@ -1,4 +1,16 @@
 <?php
+require_once "config.php";
+session_start();
+if (isset($_SESSION["id"]) && $_SESSION["userType"] === "lawyer") {
+    $lawyerId = $_SESSION["id"];
+    $lawyerSql = "SELECT * FROM lawyers WHERE id = '$lawyerId'";
+    $lawyerResult = mysqli_query($conn, $lawyerSql);
+    if (mysqli_num_rows($lawyerResult) > 0) {
+        $loginLawyer = mysqli_fetch_assoc($lawyerResult);
+        $loginLawyerName = $loginLawyer['fullname'];
+        $loginLawyerImage = $loginLawyer['image'];
+    }
+}
 echo '
 <!DOCTYPE html>
 <html lang="zxx">
@@ -38,8 +50,8 @@ echo '
             <div class="row">
                 <div class="col-lg-6 col-md-12">
                     <ul class="flat-information d-lg-flex align-items-center">
-                        <li class="email"><a href="#" title="Email">hello@finelaw.com</a></li>
-                        <li class="address"><a href="#" title="Address">20 Bardeshi, Amin Bazar, Dhaka</a></li>
+                        <li class="email">hello@finelaw.com</li>
+                        <li class="address">20 Bardeshi, Amin Bazar, Dhaka</li>
                     </ul>
                 </div>
                 <div class="col-lg-6 col-md-12">
@@ -77,7 +89,7 @@ echo '
                                     <a href="about.php">About</a>
                                 </li>
                                 <li>
-                                    <a href="practice-area.php">Practice Area</a>
+                                    <a href="practice-area.php">Practice Areas</a>
                                 </li>
                                 <li>
                                     <a href="attorneys.php">Attorneys</a>
@@ -87,30 +99,39 @@ echo '
                                 </li>
                                 <li>
                                     <a href="contact.php">Contact</a>
-                                </li>'; ?>
+                                </li>';?>
 
 <?php
-                                if(!isset($_SESSION['login'])){
-                                  
-                                    echo'
+if (!isset($_SESSION['login'])) {
+
+    echo '
                                     <li class="navBtns ">
                                         <button class="navBtn-1 fl-btn hvr-vertical"><a href="registrationForm.php">Join</a></button>
                                         <button class="navBtn-2 fl-btn hvr-vertical"><a href="loginForm.php">LogIn</a></button>
                                     </li>';
-                                    
-                               
-                                }
-                                ?>
+
+}
+?>
 <?php
-                                if(isset($_SESSION['login']) && $_SESSION["login"]===true){   
-                                  echo ' <li class="user-profile-pic">
-                                    <a href="User-panel/userpanelMain.php">
-                                        <img src="images/male_dummy.png" alt="">
-                                        My Profile
-                                    </a>                                    
-                                </li>';   
-                                }
-                                ?>
+if (isset($_SESSION['login']) && $_SESSION["login"] === true) {
+    if(isset($_SESSION['userType']) && $_SESSION['userType'] === "lawyer"){
+        echo ' <li class="user-profile-pic">
+        <a href="User-panel/lawyerPanel.php">
+            <img src="../admin-dashboard/template/images/uploads/' . $loginLawyerImage . '" alt="" class="loginProfileImg">
+            My Profile
+        </a>
+    </li>';
+    }
+    if(isset($_SESSION['userType']) && $_SESSION['userType'] === "customer"){
+        echo ' <li class="user-profile-pic">
+        <a href="User-panel/clientPanel.php">
+            <img src="../admin-dashboard/template/images/uploads/male_dummy.png" alt="" class="loginProfileImg">
+            My Profile
+        </a>
+    </li>';
+    }
+}
+?>
 
 <?php
 echo '
@@ -121,5 +142,5 @@ echo '
 </div>
 </div>
 </header>
-';                          
+';
 ?>

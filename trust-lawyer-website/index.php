@@ -1,7 +1,5 @@
 <?php
-session_start();
 require_once "partials/header.php";
-require_once "config.php";
 $firstLawyers = "SELECT * FROM lawyers LIMIT 2";
 $secLawyers = "SELECT * FROM lawyers LIMIT 2 OFFSET 2";
 $firstResult = mysqli_query($conn, $firstLawyers);
@@ -63,7 +61,7 @@ $secResult = mysqli_query($conn, $secLawyers);
                         data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
                         data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;" data-start="1000"
                         data-splitin="none" data-splitout="none" data-responsive_offset="on">
-                        <a href="#" class="hvr-vertical">Get started</a>
+                        <a href="registrationForm.php" class="hvr-vertical">Get started</a>
                     </div>
                 </li>
                 <!-- /End Slide 1 -->
@@ -231,7 +229,7 @@ $secResult = mysqli_query($conn, $secLawyers);
     <div class="practice-area practice-area-style2">
         <div class="container">
             <div class="title-section text-center">
-                <h3 class="flat-title">Practice Area</h3>
+                <h3 class="flat-title">Practice Areas</h3>
                 <p class="sub-title">We're offering expert guidance tailored to your unique needs. </p>
             </div>
             <div class="practice-area-wrap">
@@ -247,9 +245,9 @@ $secResult = mysqli_query($conn, $secLawyers);
                                 </div>
                             </div>
                             <div class="content-law">
-                                <h4 class="name">Family Law</h4>
-                                <p class="description">we specialize in Family Law, providing compassionate and expert
-                                    guidance to navigate sensitive legal matters with care and precision. </p>
+                                <h4 class="name">Family Matters</h4>
+                                <p class="description">Our specialized attorneys, providing compassionate and expert
+                                    guidance to navigate sensitive family matters with care and precision. </p>
                                 <!-- <a href="practice-area.php">read more</a> -->
                             </div>
                         </div>
@@ -265,7 +263,8 @@ $secResult = mysqli_query($conn, $secLawyers);
                                 </div>
                             </div>
                             <div class="content-law">
-                                <h4 class="name">Business Law</h4>
+                                <h4 class="name">Business and Corporate
+                                Affairs</h4>
                                 <p class="description">we are your partners in navigating the complexities of Business
                                     Law. Trust us to empower your enterprise with reliable legal solutions.</p>
                                 <!-- <a href="practice-area.php">read more</a> -->
@@ -283,8 +282,8 @@ $secResult = mysqli_query($conn, $secLawyers);
                                 </div>
                             </div>
                             <div class="content-law">
-                                <h4 class="name">Finance Law</h4>
-                                <p class="description">we specialize in Finance Law, offering comprehensive legal
+                                <h4 class="name">Finance</h4>
+                                <p class="description">we specialize in Finance, offering comprehensive legal
                                     solutions to navigate regulatory complexities and safeguard financial interests.</p>
                                 <!-- <a href="practice-area.php">read more</a> -->
                             </div>
@@ -301,7 +300,7 @@ $secResult = mysqli_query($conn, $secLawyers);
                                 </div>
                             </div>
                             <div class="content-law">
-                                <h4 class="name">Criminal Law</h4>
+                                <h4 class="name">Criminal Defense</h4>
                                 <p class="description">we specialize in Criminal Law, <br>providing strong defense and
                                     strategic representation to protect your rights and secure the best possible
                                     outcomes.</p>
@@ -320,7 +319,7 @@ $secResult = mysqli_query($conn, $secLawyers);
                                 </div>
                             </div>
                             <div class="content-law">
-                                <h4 class="name">Education Law</h4>
+                                <h4 class="name">Education</h4>
                                 <p class="description">we're your trusted partner in Education Law, our team ensures
                                     legal compliance, resolves disputes, and advocates for a fair and supportive
                                     learning environment.</p>
@@ -363,8 +362,7 @@ $secResult = mysqli_query($conn, $secLawyers);
                 <div class="col-lg-6 col-md-12">
                     <div class="flat-spacer" data-desktop="63" data-sdesktop="63" data-mobi="30" data-smobi="30"></div>
                     <div class="content">
-                        <div class="caption">Our commitment</div>
-                        <h4 class="heading">We bring justification against all curruption and injustice</h4>
+                        <h4 class="heading">Our Specialized Attorneys Pioneering Great Work in Distinct Practice Areas</h4>
                         <p class="description">
                             Our commitment goes beyond legal representation – we are dedicated to upholding justice by
                             actively combating corruption.
@@ -375,7 +373,7 @@ $secResult = mysqli_query($conn, $secLawyers);
                             wrongdoing, ensuring fairness and integrity prevail in every case we undertake.
                         </p>
                         <div class="fl-btn">
-                            <a href="practice-area.php" class="hvr-vertical">read more</a>
+                            <a href="practice-area.php" class="hvr-vertical">know more</a>
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,5 @@
 <?php
-require_once "config.php";
+require_once "partials/header.php";
 if(isset($_GET['id'])){
     $attorneyId = $_GET['id'];
     $searchSql = "SELECT* FROM lawyers WHERE id = '$attorneyId'";
@@ -49,117 +49,7 @@ $allResult = mysqli_query($conn, $allAttorneySql);
 </head>
 
 <body>
-    <div id="loading-overlay">
-        <div class="loader"></div>
-    </div>
-    <div class="top-bar">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-12">
-                    <ul class="flat-information d-lg-flex align-items-center">
-                        <li class="email"><a href="#" title="Email">hello@finelaw.com</a></li>
-                        <li class="address"><a href="#" title="Address">20 Bardeshi, Amin Bazar, Dhaka</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-6 col-md-12">
-                    <div class="flat-contact-us d-lg-flex align-items-center">
-                        <a href="#" class="phone">123.456.7890</a>
-                        <a href="#" class="cosulting hvr-vertical">FREE COSULTING
-                            <div class="border-animate">
-                                <div class="top"></div>
-                                <div class="right"></div>
-                                <div class="bottomb"></div>
-                                <div class="left"></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!-- top-bar -->
-    <header id="header" class="header bg-color">
-        <div class="container">
-            <div class="flex-header">
-                <div id="logo" class="logo">
-                    <a href="index-2.php" title="Logo"><img src="images/logo/01.png" data-width="211" data-height="34"
-                            alt="images" data-retina="images/logo/01@2x.png"></a>
-                </div>
-                <div class="content-menu">
-                    <div class="nav-wrap">
-                        <div class="btn-menu"><span></span></div>
-                        <nav id="mainnav" class="mainnav">
-                            <ul class="menu">
-                                <li>
-                                    <a href="index-2.php">Home</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="index-2.php">Home 1</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">About</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="about.php">About</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Practice Area</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="practice-area.php">Practice area</a></li>
-                                        <li><a href="practice-single.php">Practice single</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#" class="active">Attorneys</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="attorneys.php">Attorneys</a></li>
-                                        <li><a href="attorneys-single.php" class="active">Attorneys single</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Cases</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="case-results.php">Case results</a></li>
-                                        <li><a href="case-details.php">Case details</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">News</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="blog.php">Blog</a></li>
-                                        <li><a href="blog-single.php">Blog single</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Contact</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="contact.php">Contact</a></li>
-                                        <li><a href="faq.php">FAQ</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="flat-show-search">
-                        <div class="show-search">
-                            <a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
-                        </div>
-                        <div class="top-search">
-                            <div>
-                                <form action="#" id="searchform-all" method="get">
-                                    <input type="text" id="s" class="ss" placeholder="Search...">
-                                    <button class="search-submit">
-                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header><!-- header -->
-
-    <div class="attorneys-single">
+  <div class="attorneys-single">
         <div class="container">
             <div class="row">
                 <div class="col-lg-9 col-md-12">

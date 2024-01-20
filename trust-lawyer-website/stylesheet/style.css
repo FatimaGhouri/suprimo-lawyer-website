@@ -360,7 +360,7 @@ input::-webkit-input-placeholder {
 .similar-case .case-content a:hover,
 .iconbox-features .iconbox .iconbox-content .title a:hover,
 .about .content .title a:hover,
-.image-box-law .content-law a:hover,
+.image-box-law .content-law:hover,
 .view-all a:hover,
 .iconbox-features .iconbox .iconbox-content .fl-btn a:hover,
 #mainnav .menu > li > a.active,
@@ -956,9 +956,11 @@ input::-webkit-input-placeholder {
 }
 
 .header .user-profile-pic img{
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
     object-fit: cover;
+    object-position: top;
 }
 
 /* Mobile navigation
@@ -2640,7 +2642,18 @@ input::-webkit-input-placeholder {
 }
 .practice-area .title-section {
     margin-bottom: 65px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+.practice-area .image-box-law .entry-image a{
+    cursor:default;
+}
+.practice-area .title-section .sub-title{
+    width: 65%;
+}
+
 .case-evaluation {
     background-image: url('../images/practice/09.png');
     background-size: cover;

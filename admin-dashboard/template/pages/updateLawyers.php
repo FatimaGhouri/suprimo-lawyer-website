@@ -157,20 +157,18 @@ if ($errorMsg) {
                                             <option value="Legal Consultation and Advice">Legal Consultation and Advice
                                             </option>
                                             <option value="Contracts and Agreements">Contracts and Agreements</option>
-                                            <option value="Litigation and Dispute Resolution">Litigation and Dispute
-                                                Resolution</option>
+                                           
                                             <option value="Real Estate">Real Estate</option>
                                             <option value="Family Matters">Family Matters</option>
-                                            <option value="Estate Planning">Estate Planning</option>
+                                            
                                             <option value="Business and Corporate Affairs">Business and Corporate
                                                 Affairs</option>
-                                            <option value="Employment Issues">Employment Issues</option>
-                                            <option value="Intellectual Property (IP)">Intellectual Property (IP)
-                                            </option>
+                                            <option value="Employment Issues">Education</option>
+                                        
                                             <option value="Immigration Assistance">Immigration Assistance</option>
                                             <option value="Criminal Defense">Criminal Defense</option>
-                                            <option value="Affidavit">Affidavit</option>
-                                            <option value="Divorce Law">Divorce Law</option>
+                                   
+                                            <option value="Divorce Law">Finance</option>
                                         </select>
                                     </div>
                                     <div class="form-group">

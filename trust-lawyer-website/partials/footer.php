@@ -45,12 +45,12 @@ echo '<footer id="footer" class="footer">
                                 <h2 class="widget-title">About</h2>
                                 <div class="content">
                                     <ul class="widget-menu">
-                                        <li><a href="#">Home</a></li>
-                                        <li><a href="#">About</a></li>
-                                        <li><a href="#">Practice Area</a></li>
-                                        <li><a href="#">Attorneys</a></li>
-                                        <li><a href="#">Blog</a></li>
-                                        <li><a href="#">contact</a></li>
+                                        <li><a href="index.php">Home</a></li>
+                                        <li><a href="about.php">About</a></li>
+                                        <li><a href="practice-area.php">Practice Area</a></li>
+                                        <li><a href="attorneys.php">Attorneys</a></li>
+                                        <li><a href="blog.php">Blog</a></li>
+                                        <li><a href="contact.php">contact</a></li>
                                     </ul>
                                 </div>
                             </div>

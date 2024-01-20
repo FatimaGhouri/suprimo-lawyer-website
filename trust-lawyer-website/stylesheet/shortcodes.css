@@ -46,6 +46,7 @@
 .image-box-law .featured-post .entry-image img {
     display: block;
     width: 100%;
+    height: 216px;
     -webkit-transition: all 0.7s ease;
     -moz-transition: all 0.7s ease;
     -ms-transition: all 0.7s ease;
@@ -106,10 +107,18 @@
     font-family: "Poppins", sans-serif;
 }
 .image-box-law .content-law a {
-    font-size: 14px;
-    font-weight: 700;
-    color: #291d0d;
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
     text-transform: uppercase;
+    font-family: poppins;
+    letter-spacing: 1px;
+    background-color: #cca776;
+    padding: 10px;
+}
+
+.image-box-law .content-law a:hover{
+    color: #fde7ad;
 }
 
 /* featured

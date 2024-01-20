@@ -316,7 +316,7 @@ if (isset($_POST['loginLawyer'])) {
                         </div>
 
                         <div class="input_wrapper">
-                            <input type="password" id="password" name="password" class="input_field" class="form-control" placeholder="Your Password" title="Minimum 6 character at least 1 Alphabet and 1 Number" pattern="^(?=.*[A-Za-z]) (?=.*\d) [A-Za-z\d]{6,}$" required>
+                            <input type="password" id="password" name="password" class="input_field" class="form-control" placeholder="Your Password" required>
                             <label for="password" class="input_label">Password:</label>
                             <!-- svg -->
                         </div>
