@@ -707,4 +707,13 @@ $secResult = mysqli_query($conn, $secLawyers);
 <?php
 require_once "partials/footer.php";
 ?>
+<script src="rev-slider/js/extensions/extensionsrevolution.extension.actions.min.js"></script>
+<script src="rev-slider/js/extensions/extensionsrevolution.extension.carousel.min.js"></script>
+<script src="rev-slider/js/extensions/extensionsrevolution.extension.kenburn.min.js"></script>
+<script src="rev-slider/js/extensions/extensionsrevolution.extension.layeranimation.min.js"></script>
+<script src="rev-slider/js/extensions/extensionsrevolution.extension.migration.min.js"></script>
+<script src="rev-slider/js/extensions/extensionsrevolution.extension.navigation.min.js"></script>
+<script src="rev-slider/js/extensions/extensionsrevolution.extension.parallax.min.js"></script>
+<script src="rev-slider/js/extensions/extensionsrevolution.extension.slideanims.min.js"></script>
+<script src="rev-slider/js/extensions/extensionsrevolution.extension.video.min.js"></script>
 <!--footer -->

@@ -215,69 +215,39 @@
         </div>
     </div><!-- practice-area -->
     <div class="case-evaluation">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 col-md-12">
-                    <div class="go-up">
-                        <div class="themesflat-content-box" data-padding="0% 0% 0% 0%"
-                            data-sdesktoppadding="0% 0% 0% 0%" data-ssdesktoppadding="0% 0% 0% 0%"
-                            data-mobipadding="100px 0% 0% 0%" data-smobipadding="100px 0% 0% 0%">
-                            <form action="#" class="form-evaluation">
-                                <div class="wrap-evaluation">
-                                    <h5 class="title">Free Case Evaluation</h5>
-                                    <div class="your-name mg-text">
-                                        <input type="text" class="your-name" placeholder="Your name">
-                                    </div>
-                                    <div class="your-email mg-text">
-                                        <input type="text" class="your-email" placeholder="Your email">
-                                    </div>
-                                    <div class="your-phone mg-text">
-                                        <input type="text" class="your-phone" placeholder="Your phone no">
-                                    </div>
-                                    <div class="subject mg-text">
-                                        <input type="text" class="subject" placeholder="Subject">
-                                    </div>
-                                    <div class="message-wrap mg-text">
-                                        <textarea name="message" id="message" rows="8"
-                                            placeholder="Your message"></textarea>
-                                    </div>
-                                    <div class="fl-btn">
-                                        <button class="hvr-vertical">Request call back</button>
-                                    </div>
-                                </div>
-                            </form>
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-12   col-md-12">
+                <div class="content-evaluation">
+                    <div class="themesflat-content-box" data-padding="113px 0% 101px 100px"
+                        data-sdesktoppadding="113px 0% 101px 0" data-ssdesktoppadding="113px 0% 101px 0"
+                        data-mobipadding="50px 0 100px 0" data-smobipadding="50px 0 100px 0">
+                        <div class="caption">Get quick response</div>
+                        <h4 class="heading">Get a quick response and legal advice from expert</h4>
+                        <p class="description">
+                            Expect a prompt response and expert legal advice. Our commitment to quick and efficient
+                            service ensures you get the guidance you need when you need it, with expertise you can
+                            trust.
+                        </p>
+                        <div class="flat-spacer" data-desktop="90" data-sdesktop="60" data-mobi="25" data-smobi="25">
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-7 col-md-12">
-                    <div class="content-evaluation">
-                        <div class="themesflat-content-box" data-padding="113px 0% 101px 100px"
-                            data-sdesktoppadding="113px 0% 101px 0" data-ssdesktoppadding="113px 0% 101px 0"
-                            data-mobipadding="50px 0 100px 0" data-smobipadding="50px 0 100px 0">
-                            <div class="caption">Get quick response</div>
-                            <h4 class="heading">Get a quick response and legal advice from expert</h4>
-                            <p class="description">
-                                Lorem ipsum dolor sit amet, consecte dunt ut labore et dot enim ad minim veniam, quis
-                                nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                                irure dolor
-                            </p>
-                            <div class="flat-spacer" data-desktop="90" data-sdesktop="60" data-mobi="25"
-                                data-smobi="25"></div>
-                            <div class="call-us">
-                                <div class="text">
-                                    Or Call us
-                                </div>
-                                <h3 class="phone-number">
-                                    123.456.7890 <span class="toll-free">(toll free)</span>
-                                </h3>
+                        <div class="call-us">
+                            <div class="text">
+                                Or Call us
                             </div>
+                            <h3 class="phone-number">
+                                123.456.7890 <span class="toll-free">(toll free)</span>
+                            </h3>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div><!-- case-evaluation -->
+    </div>
+</div><!-- case-evaluation -->
+
     <div class="attorneys attorneys-style3">
         <div class="container">
             <div class="title-section text-center">
@@ -299,7 +269,7 @@
                             </div>
                             <div class="overlay-box">
                                 <div class="content">
-                                    <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
+                                    <a href="attorneys.php"><i class="fa fa-link" aria-hidden="true"></i></a>
                                 </div>
                             </div>
                         </div>

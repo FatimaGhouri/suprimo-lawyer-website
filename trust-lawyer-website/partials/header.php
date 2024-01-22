@@ -1,7 +1,7 @@
 <?php
 require_once "config.php";
 @session_start();
-if (isset($_SESSION["id"]) && $_SESSION["userType"] === "lawyer") {
+if (isset($_SESSION["id"]) && @$_SESSION["userType"] === "lawyer") {
     $lawyerId = $_SESSION["id"];
     $lawyerSql = "SELECT * FROM lawyers WHERE id = '$lawyerId'";
     $lawyerResult = mysqli_query($conn, $lawyerSql);
@@ -61,8 +61,8 @@ if (isset($fileName)) {
             <div class="row">
                 <div class="col-lg-6 col-md-12">
                     <ul class="flat-information d-lg-flex align-items-center">
-                        <li class="email">hello@finelaw.com</li>
-                        <li class="address">20 Bardeshi, Amin Bazar, Dhaka</li>
+                        <li class="email">Suprimo@law.com</li>
+                        <li class="address">123 Main Street, Karachi, Pakistan</li>
                     </ul>
                 </div>
                 <div class="col-lg-6 col-md-12">

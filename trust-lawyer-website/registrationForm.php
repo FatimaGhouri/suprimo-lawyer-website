@@ -196,7 +196,7 @@ if (isset($_POST['registerLawyer'])) {
 
     .form-panel-2 {
       position: absolute;
-      width: 100%; 
+      width: 100%;
       transform: translateX(-120%);
     }
 
@@ -279,20 +279,30 @@ if (isset($_POST['registerLawyer'])) {
       firstBtn.type = "submit";
     }
 
-    function toggleForm() {
-      const userType = document.querySelector(
-        'input[name="userType"]:checked'
-      ).value;
-      const formPanel1 = document.getElementById("panel-one");
-      const formPanel2 = document.getElementById("panel-two");
+    function toggleForm(element) {   
+    const userType = document.querySelector('input[name="userType"]:checked').value;
+    const formPanel1 = document.getElementById("panel-one");
+    const formPanel2 = document.getElementById("panel-two");
 
-      const nextButton = document.getElementById("nextButton");
+    const nextButton = document.getElementById("nextButton");
 
-      if (userType === "lawyer") {
-        formPanel2.style.transform = "translateX(0)";
-        formPanel1.style.display = "none";
-      }
+    const fullname = document.getElementById("fullname");
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+    const contact = document.getElementById("contact");
+    const location = document.getElementById("location");
+
+    if (element.value == 'Next') {  
+        if (fullname.value == '' || email.value == '' || password.value == '' || contact.value == '' || location.value == '') {
+            alert('Fill the fields');
+        } else {
+            if (userType === "lawyer") {
+                formPanel2.style.transform = "translateX(0)";
+                formPanel1.style.display = "none";
+            }
+        }
     }
+}
 
     function goBack() {
       const formPanel1 = document.getElementById("panel-one");
@@ -328,7 +338,7 @@ if (isset($_POST['registerLawyer'])) {
         <!-- Common form panel for both customers and lawyers -->
         <form id="registrationForm" method="POST" enctype="multipart/form-data">
           <div class="form-panel-1" id="panel-one">
-          <img src="./images/logo/logo.png" style=" width: 50%; height: 45px; margin-top: 40px; margin-left: 130px; margin-bottom:30px; ">
+            <img src="./images/logo/logo.png" style=" width: 50%; height: 45px; margin-top: 40px; margin-left: 130px; margin-bottom:30px; ">
             <h2>Registration Form</h2>
             <!-- Common inputs for both -->
             <label for="fullname">Full Name:</label>
@@ -344,7 +354,7 @@ if (isset($_POST['registerLawyer'])) {
             <input type="text" id="contact" name="contact" class="form-control" required /><br />
 
             <label for="location">Location:</label>
-            <select class="form-select" name="location" required>
+            <select class="form-select" name="location" id='location' required>
               <option disabled selected value="">Select a location</option>
               <optgroup label="Major Cities">
                 <option value="Karachi">Karachi</option>
@@ -378,13 +388,13 @@ if (isset($_POST['registerLawyer'])) {
                 Lawyer
               </label>
             </div>
-            <input type="submit" id="firstBtn" value="Submit" name="registerCustomer" onclick="toggleForm()" />
+            <input type="submit" id="firstBtn" value="Submit" name="registerCustomer" onclick="toggleForm(this)" />
             <p class="loginShift">Already have an account? <a href="loginForm.php">LogIn</a></p>
 
           </div>
 
           <div class="form-panel-2" id="panel-two">
-          <img src="./images/logo/logo.png" style=" width: 50%; height: 45px; margin-top: 40px; margin-left: 130px; margin-bottom:30px; ">
+            <img src="./images/logo/logo.png" style=" width: 50%; height: 45px; margin-top: 40px; margin-left: 130px; margin-bottom:30px; ">
             <h2>Additional Information</h2>
             <p>
               As you are proceeding with your lawyer registration, please

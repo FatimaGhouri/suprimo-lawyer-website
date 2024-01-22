@@ -58,9 +58,9 @@ require_once "partials/header.php";
                                 <li class="author"><a href="#" title="">Ibrahim Samad</a></li>
                                 <li class="comment"><a href="#" title="">48</a></li>
                             </ul>
-                            <div class="fl-btn d-flex">
+                            <!-- <div class="fl-btn d-flex">
                                 <a href="#" class="hvr-vertical">read more</a>
-                            </div>
+                            </div> -->
                         </div>
                     </article>
                     <article class="main-post mg-bottom-bl">
@@ -94,9 +94,9 @@ require_once "partials/header.php";
                                 <li class="author"><a href="#" title="">Saira Nadeem</a></li>
                                 <li class="comment"><a href="#" title="">52</a></li>
                             </ul>
-                            <div class="fl-btn d-flex">
+                            <!-- <div class="fl-btn d-flex">
                                 <a href="#" class="hvr-vertical">read more</a>
-                            </div>
+                            </div> -->
                         </div>
                     </article>
                     <article class="main-post mg-bottom-bl">
@@ -130,12 +130,12 @@ require_once "partials/header.php";
                                 <li class="author"><a href="#" title="">Sameer Ali</a></li>
                                 <li class="comment"><a href="#" title="">60</a></li>
                             </ul>
-                            <div class="fl-btn d-flex">
+                            <!-- <div class="fl-btn d-flex">
                                 <a href="#" class="hvr-vertical">read more</a>
-                            </div>
+                            </div> -->
                         </div>
                     </article>
-                    <div class="flat-pagination mg-pagination text-center">
+                    <!-- <div class="flat-pagination mg-pagination text-center">
                         <ul>
                             <li><a href="#" class="numbers">1</a></li>
                             <li><a href="#" class="numbers">2</a></li>
@@ -145,7 +145,7 @@ require_once "partials/header.php";
                                 </a>
                             </li>
                         </ul>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="col-lg-4 col-md-12">
@@ -208,19 +208,20 @@ require_once "partials/header.php";
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-sm-12">
-                <div class="content">
+                <div class="content" style="text-align: center;">
                     <h6 class="title">Lets solve your problem today</h6>
-                    <p>Lorem ipsum dolor sit amet, consecte dunt ut labore</p>
+                    <p>Empowering solutions, let's tackle and resolve your challenges together today</p>
                 </div>
             </div>
-            <div class="col-lg-4 col-sm-12">
-                <div class="fl-btn">
-                    <a href="#" class="hvr-vertical">read more</a>
-                </div>
+            <!-- <div class="col-lg-4 col-sm-12">
+                <div class="fl-btn hvr-vertical">
+                    <a href="attorneys.php">Book Your Appointment</a>
+                </div> -->
             </div>
         </div>
     </div>
 </div><!-- featured-banner -->
+
 
 <?php
    require_once "partials/footer.php";

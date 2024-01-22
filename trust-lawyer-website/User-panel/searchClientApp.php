@@ -3,7 +3,7 @@ require_once "../config.php";
 if(isset($_GET['status']) &&  isset($_GET['id'])){
     $status = $_GET['status'];
     $clientId = $_GET['id'];
-        $searchApp = "SELECT appointments.id, lawyers.fullname, lawyers.services, lawyers.email, appointments.appDateTime, appointments.message FROM appointments JOIN lawyers ON lawyers.id = appointments.lawyers_id JOIN customers ON customers.id = appointments.customers_id WHERE customers_id = '$clientId' && status = '$status'";
+        $searchApp = "SELECT appointments.id, lawyers.fullname, lawyers.services, lawyers.email, appointments.appDateTime FROM appointments JOIN lawyers ON lawyers.id = appointments.lawyers_id JOIN customers ON customers.id = appointments.customers_id WHERE customers_id = '$clientId' && status = '$status'";
         $searchAppResult = mysqli_query($conn,$searchApp);
     
    

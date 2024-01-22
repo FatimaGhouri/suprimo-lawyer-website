@@ -139,15 +139,15 @@ $result = mysqli_query($conn, $sql);
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-sm-12">
-                <div class="content">
+                <div class="content" style="text-align: center;">
                     <h6 class="title">Lets solve your problem today</h6>
-                    <p>Lorem ipsum dolor sit amet, consecte dunt ut labore</p>
+                    <p>Empowering solutions, let's tackle and resolve your challenges together today</p>
                 </div>
             </div>
-            <div class="col-lg-4 col-sm-12">
+            <!-- <div class="col-lg-4 col-sm-12">
                 <div class="fl-btn hvr-vertical">
                     <a href="attorneys.php">Book Your Appointment</a>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
