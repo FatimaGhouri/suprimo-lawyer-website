@@ -335,8 +335,9 @@ if(isset($_POST['updateCustData'])){
                                         <div class="btnsCover">
                                             <button id="pendingBtn" class="seacrchBtn btn-info active">Pending</button>
                                             <button id="approvedBtn" class="seacrchBtn btn-info">Approved</button>
+                                            <button id="rejectedBtn" class="seacrchBtn btn-info">Rejected Appointments</button>
                                         </div>
-                                        <button class="btn rejectedAppBtn" id="rejectedBtn">Rejected Appointments</button>
+                                        <!-- <button class="btn rejectedAppBtn" id="rejectedBtn">Rejected Appointments</button> -->
                                     </div>
                                     <div class="appHeadingDiv">
                                     <h5 id="appHeading" class="mb-3">Pending Appointments :</h5>
@@ -372,6 +373,7 @@ if(isset($_POST['updateCustData'])){
     function toggleStatus(status) {
         document.getElementById('pendingBtn').classList.toggle('active', status === 'pending');
         document.getElementById('approvedBtn').classList.toggle('active', status === 'approved');
+        document.getElementById('rejectedBtn').classList.toggle('active', status === 'rejected');
         fetch('searchClientApp.php?status=' + status + '&&id=' + <?php echo $clientId; ?>)
             .then(response => response.text())
             .then(data => {

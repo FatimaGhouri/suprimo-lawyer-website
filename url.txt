@@ -1,0 +1,4 @@
+admin login path:
+http://localhost/admin_dashboard_epro/admin-dashboard/template/pages/samples/login.php
+
+http://localhost/admin_dashboard_epro/trust-lawyer-website/index.php

@@ -73,10 +73,6 @@ $appCount = mysqli_fetch_array($appCountResult)[0];
                         </div>
                     </li>
 
-
-
-
-
                 </ul>
 
             </div>
@@ -192,6 +188,72 @@ $appCount = mysqli_fetch_array($appCountResult)[0];
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="bg-white py-3 rounded-1 shadow-sm px-2   ">
+                        <div class="headingg2">
+                            <h4 class="text-center">Contact Us List</h4>
+                        </div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        S.No
+                                    </th>
+
+                                    <th>
+                                        Name
+                                    </th>
+                                    <th>
+                                        Email
+                                    </th>
+                                    <th>
+                                        Phone
+                                    </th>
+                                    <th>
+                                        Message
+                                    </th>
+                                    <th>
+                                        Created At
+                                    </th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+
+                                $selectContact = mysqli_query($conn, "select * from contact_us order by id DESC");
+                                $i = 1;
+                                if (mysqli_num_rows($selectContact) > 0) {
+                                    while ($consts_row = mysqli_fetch_array($selectContact)) {
+
+                                ?>
+                                        <tr>
+                                            <td>
+                                                <?= $i ?>
+                                            </td>
+                                            <td>
+                                                <?= $consts_row['name'] ?>
+                                            </td>
+                                            <td>
+                                                <?= $consts_row['email'] ?>
+                                            </td>
+                                            <td>
+                                                <?= $consts_row['phone'] ?>
+                                            </td>
+                                            <td>
+                                                <?= $consts_row['message'] ?>
+                                            </td>
+                                            <td>
+                                                <?= $consts_row['datetime'] ?>
+                                            </td>
+                                        </tr>
+                                <?php
+                                        $i++;
+                                    }
+                                }
+                                ?>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
                 <!-- content-wrapper ends -->
