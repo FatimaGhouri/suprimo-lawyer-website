@@ -220,19 +220,7 @@ if (isset($_POST['updateLawyerForm'])) {
                         <li class="dropdown-header">
                             <h6><?php echo ucwords($lawyerName); ?></h6>
                         </li>
-                        <li>
-                            <hr class="dropdown-divider" />
-                        </li>
-
-                        <li>
-                            <a class="dropdown-item d-flex align-items-center" href="userpanel.php">
-                                <i class="bi bi-person"></i>
-                                <span>My Profile</span>
-                            </a>
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider" />
-                        </li>
+                    
                         <li>
                         <a class="dropdown-item d-flex align-items-center" href="../logout.php">
                                 <i class="bi bi-box-arrow-right"></i>
