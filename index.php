@@ -406,7 +406,7 @@ $secResult = mysqli_query($conn, $secLawyers);
 
                                 <div class="attorneys-avatar hv-link-content">
                                     <div class="image image-full">
-                                        <img src="../admin-dashboard/template/images/uploads/<?php echo $rows['image'];?>"
+                                        <img src="admin/images/uploads/<?php echo $rows['image'];?>"
                                             alt="images">
                                     </div>
                                     <div class="overlay-box">
