@@ -15,7 +15,7 @@ echo '<nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <img src="../images/uploads/'. $_SESSION['image'].'" alt="profile"/>
       </a>
       <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-        <a class="dropdown-item"  href="../pages/samples/logout.php">
+        <a class="dropdown-item"  href="../logout.php">
           <i class="ti-power-off text-primary"></i>
           Logout
         </a>

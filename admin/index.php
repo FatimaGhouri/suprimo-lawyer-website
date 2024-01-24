@@ -2,11 +2,11 @@
 session_start();
 if (isset($_SESSION['userType']) && $_SESSION['userType'] == 'admin') {
 } else {
-    header("location:pages/login");
+    header("location:login");
     die();
 }
 if ($_SESSION['login'] !== true) {
-    header("location:pages/login");
+    header("location:login");
     die();
 }
 require_once "pages/config.php";
@@ -71,9 +71,9 @@ $appCount = mysqli_fetch_array($appCountResult)[0];
                             <img src="images/uploads/<?php echo $_SESSION['image']; ?>" alt="profile" />
                         </a>
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-                            <a class="dropdown-item" href="pages/samples/logout">
+                            <a class="dropdown-item" href="logout">
                                 <i class="ti-power-off text-primary"></i>
-                                Logout edit by habiba
+                                Logout
                             </a>
                         </div>
                     </li>

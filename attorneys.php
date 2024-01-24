@@ -101,7 +101,7 @@ $result = mysqli_query($conn, $sql);
                             <div class="attorneys-info attorneys-hv-link mg-60" id="content-block">
                                 <div class="attorneys-avatar hv-link-content">
                                     <div class="image">
-                                        <img src="../admin-dashboard/template/images/uploads/<?php echo $rows['image']; ?>" alt="images">
+                                        <img src="admin/images/uploads/<?php echo $rows['image']; ?>" alt="images">
                                     </div>
                                     <div class="overlay-box">
                                         <div class="content">
