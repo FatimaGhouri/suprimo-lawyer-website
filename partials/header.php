@@ -93,7 +93,7 @@ if (isset($fileName)) {
                         <nav id="mainnav" class="mainnav">
                             <ul class="menu">
                                 <li>
-                                    <a href="/" class="<?= activeNav('index.php') ?>">Home</a>
+                                    <a href="index" class="<?= activeNav('index') ?>">Home</a>
                                 </li>
                                 <li>
                                     <a href="about" class="<?= activeNav('about.php') ?>">About</a>
@@ -125,16 +125,16 @@ if (isset($fileName)) {
                                 if (isset($_SESSION['login']) && $_SESSION["login"] === true) {
                                     if (isset($_SESSION['userType']) && $_SESSION['userType'] === "lawyer") {
                                         echo ' <li class="user-profile-pic">
-        <a href="User-panel/lawyerPanel.php">
-            <img src="../admin-dashboard/template/images/uploads/' . $loginLawyerImage . '" alt="" class="loginProfileImg">
+        <a href="User-panel/lawyerPanel">
+            <img src="admin/images/uploads/' . $loginLawyerImage . '" alt="" class="loginProfileImg">
             My Profile
         </a>
     </li>';
                                     }
                                     if (isset($_SESSION['userType']) && $_SESSION['userType'] === "customer") {
                                         echo ' <li class="user-profile-pic">
-        <a href="User-panel/clientPanel.php">
-            <img src="../admin-dashboard/template/images/uploads/male_dummy.png" alt="" class="loginProfileImg">
+        <a href="User-panel/clientPanel">
+            <img src="admin/images/uploads/male_dummy.png" alt="" class="loginProfileImg">
             My Profile
         </a>
     </li>';

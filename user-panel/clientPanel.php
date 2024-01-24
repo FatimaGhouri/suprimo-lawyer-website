@@ -150,22 +150,22 @@ if(isset($_POST['updateCustData'])){
         <nav class="header-nav-items">
             <ul class="d-flex align-items-center">
                 <li>
-                    <a href="../index.php" class="active">Home</a>
+                    <a href="../index" class="active">Home</a>
                 </li>
                 <li>
-                    <a href="../about.php">About</a>
+                    <a href="../about">About</a>
                 </li>
                 <li>
-                    <a href="../practice-area.php">Practice Area</a>
+                    <a href="../practice-area">Practice Area</a>
                 </li>
                 <li>
-                    <a href="../attorneys.php">Attorneys</a>
+                    <a href="../attorneys">Attorneys</a>
                 </li>
                 <li>
-                    <a href="../blog.php">News</a>
+                    <a href="../blog">News</a>
                 </li>
                 <li>
-                    <a href="../contact.php">Contact</a>
+                    <a href="../contact">Contact</a>
                 </li>
             </ul>
         </nav>

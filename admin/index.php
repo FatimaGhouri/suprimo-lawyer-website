@@ -90,31 +90,31 @@ $appCount = mysqli_fetch_array($appCountResult)[0];
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php">
+                        <a class="nav-link" href="index">
                             <i class="icon-grid menu-icon"></i>
                             <span class="menu-title">Dashboard</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/customers.php">
+                        <a class="nav-link" href="pages/customers">
                             <i class="fa-solid fa-users menu-icon"></i>
                             <span class="menu-title">Customers</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/lawyers.php">
+                        <a class="nav-link" href="pages/lawyers">
                             <i class="fa-solid fa-user-tie menu-icon"></i>
                             <span class="menu-title">Lawyers</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/appointments.php">
+                        <a class="nav-link" href="pages/appointments">
                             <i class="fa-solid fa-calendar-check menu-icon"></i>
                             <span class="menu-title">Appoinments</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/adminProfile.php">
+                        <a class="nav-link" href="pages/adminProfile">
                             <i class="fa-solid fa-circle-user menu-icon"></i>
                             <span class="menu-title">Admin Profile</span>
                         </a>
