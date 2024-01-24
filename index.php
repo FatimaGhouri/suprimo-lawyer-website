@@ -62,7 +62,7 @@ $secResult = mysqli_query($conn, $secLawyers);
                         data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
                         data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;" data-start="1000"
                         data-splitin="none" data-splitout="none" data-responsive_offset="on">
-                        <a href="registrationForm.php" class="hvr-vertical">Get started</a>
+                        <a href="signup" class="hvr-vertical">Get started</a>
                     </div>
                 </li>
                 <!-- /End Slide 1 -->

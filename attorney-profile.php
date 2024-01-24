@@ -246,7 +246,7 @@ require_once "partials/header.php";
                     ?>
                         <div class="flat-contact-us d-lg-flex align-items-center">
 
-                            <a href="loginForm.php" class="cosulting hvr-vertical">
+                            <a href="login" class="cosulting hvr-vertical">
                                 Signin for Appointment
                                 <div class="border-animate">
                                     <div class="top"></div>
@@ -286,20 +286,19 @@ require_once "partials/header.php";
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-sm-12">
-                <div class="content">
+                <div class="content" style="text-align: center;">
                     <h6 class="title">Lets solve your problem today</h6>
-                    <p>Lorem ipsum dolor sit amet, consecte dunt ut labore</p>
+                    <p>Empowering solutions, let's tackle and resolve your challenges together today</p>
                 </div>
             </div>
-            <div class="col-lg-4 col-sm-12">
+            <!-- <div class="col-lg-4 col-sm-12">
                 <div class="fl-btn hvr-vertical">
                     <a href="attorneys.php">Book Your Appointment</a>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
 </div><!-- featured-banner -->
-
 <?php
 require_once "partials/footer.php";
 ?>

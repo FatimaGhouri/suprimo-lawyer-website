@@ -16,7 +16,7 @@ require_once "partials/header.php";
             <div class="col-lg-6 col-md-12">
                 <ul class="breadcrumb">
                     <li><a href="#" class="active">Home</a></li>
-                    <li><a href="#">News</a></li>
+                    <li><a href="#">blog</a></li>
                 </ul>
             </div>
         </div>

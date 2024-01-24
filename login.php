@@ -352,7 +352,7 @@ if (isset($_POST['loginLawyer'])) {
                         <div class="my-form__actions">
                             <div class="my-form__row">
                                 <span>Don't have an account?</span>
-                                <a href="registrationForm.php" title="Create Account">SignUp</a>
+                                <a href="signup" title="Create Account">SignUp</a>
                             </div>
                         </div>
                     </div>

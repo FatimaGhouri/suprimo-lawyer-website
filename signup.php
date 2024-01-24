@@ -12,7 +12,7 @@ if (isset($_POST['registerCustomer'])) {
   $resultCust = mysqli_query($conn, $regCust);
 
   if ($resultCust) {
-    header("location:loginForm.php");
+    header("location:login");
   } else {
     echo ("got some issue in registerin customer");
   }
@@ -40,7 +40,7 @@ if (isset($_POST['registerLawyer'])) {
       mysqli_stmt_execute($stmt);
 
       if (mysqli_stmt_affected_rows($stmt) > 0) {
-        header("location:loginForm.php");
+        header("location:login");
       } else {
         echo "got issue";
       }
@@ -245,7 +245,7 @@ if (isset($_POST['registerLawyer'])) {
       color: #ffffff;
     }
 
-    form#registrationForm {
+    form#signup {
       margin: auto;
       display: flex;
       width: 100%;
@@ -317,7 +317,7 @@ if (isset($_POST['registerLawyer'])) {
     }
 
     function submitForm() {
-      document.getElementById("registrationForm").submit();
+      document.getElementById("signup").submit();
     }
   </script>
 </head>
@@ -336,7 +336,7 @@ if (isset($_POST['registerLawyer'])) {
     <div class="form-container d-flex align-items-center w-100">
       <div id="formContent" class="form-content w-100 h-100">
         <!-- Common form panel for both customers and lawyers -->
-        <form id="registrationForm" method="POST" enctype="multipart/form-data">
+        <form id="signup" method="POST" enctype="multipart/form-data">
           <div class="form-panel-1" id="panel-one">
             <img src="./images/logo/logo.png" style=" width: 50%; height: 45px; margin-top: 40px; margin-left: 130px; margin-bottom:30px; ">
             <h2>Registration Form</h2>
@@ -389,7 +389,7 @@ if (isset($_POST['registerLawyer'])) {
               </label>
             </div>
             <input type="submit" id="firstBtn" value="Submit" name="registerCustomer" onclick="toggleForm(this)" />
-            <p class="loginShift">Already have an account? <a href="loginForm.php">LogIn</a></p>
+            <p class="loginShift">Already have an account? <a href="login">LogIn</a></p>
 
           </div>
 

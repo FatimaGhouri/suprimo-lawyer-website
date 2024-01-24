@@ -93,22 +93,22 @@ if (isset($fileName)) {
                         <nav id="mainnav" class="mainnav">
                             <ul class="menu">
                                 <li>
-                                    <a href="index.php" class="<?= activeNav('index.php') ?>">Home</a>
+                                    <a href="/" class="<?= activeNav('index.php') ?>">Home</a>
                                 </li>
                                 <li>
-                                    <a href="about.php" class="<?= activeNav('about.php') ?>">About</a>
+                                    <a href="about" class="<?= activeNav('about.php') ?>">About</a>
                                 </li>
                                 <li>
-                                    <a href="practice-area.php" class="<?= activeNav('practice-area.php') ?>">Practice Areas</a>
+                                    <a href="practice-area" class="<?= activeNav('practice-area.php') ?>">Practice Areas</a>
                                 </li>
                                 <li>
-                                    <a href="attorneys.php" class="<?= activeNav('attorneys.php') ?>">Attorneys</a>
+                                    <a href="attorneys" class="<?= activeNav('attorneys.php') ?>">Attorneys</a>
                                 </li>
                                 <li>
-                                    <a href="blog.php" class="<?= activeNav('blog.php') ?>">News</a>
+                                    <a href="blog" class="<?= activeNav('blog.php') ?>">blog</a>
                                 </li>
                                 <li>
-                                    <a href="contact.php" class="<?= activeNav('contact.php') ?>">Contact</a>
+                                    <a href="contact" class="<?= activeNav('contact.php') ?>">Contact</a>
                                 </li>
 
                                 <?php
@@ -116,8 +116,8 @@ if (isset($fileName)) {
 
                                     echo '
                                     <li class="navBtns ">
-                                        <button class="navBtn-1 fl-btn hvr-vertical"><a href="registrationForm.php">Join</a></button>
-                                        <button class="navBtn-2 fl-btn hvr-vertical"><a href="loginForm.php">LogIn</a></button>
+                                        <button class="navBtn-1 fl-btn hvr-vertical"><a href="signup">Join</a></button>
+                                        <button class="navBtn-2 fl-btn hvr-vertical"><a href="login">LogIn</a></button>
                                     </li>';
                                 }
                                 ?>
