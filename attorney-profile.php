@@ -32,7 +32,7 @@ require_once "partials/header.php";
                         <div class="personal-details">
                             <div class="featured-post">
                                 <div class="entry-image">
-                                    <img src="../admin-dashboard/template/images/uploads/<?php echo $attorney_image; ?>" alt="images">
+                                    <img src="admin/images/uploads/<?php echo $attorney_image; ?>" alt="images">
                                 </div>
                             </div>
                             <ul class="attorneys-info-sn">
