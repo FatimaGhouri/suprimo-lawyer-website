@@ -1,6 +1,7 @@
 <?php
 require_once "config.php";
 require_once "partials/header.php";
+$attorneyId = $_GET['id'];
 if (isset($_GET['id'])) {
     $attorneyId = $_GET['id'];
     $searchSql = "SELECT* FROM lawyers WHERE id = '$attorneyId'";
@@ -242,12 +243,12 @@ require_once "partials/header.php";
                                 </div>
                             </div>
                         </form>
-                    <?php } else {
+                    <?php } else if(!isset($_SESSION["id"])){
                     ?>
                         <div class="flat-contact-us d-lg-flex align-items-center">
 
-                            <a href="login" class="cosulting hvr-vertical">
-                                Signin for Appointment
+                            <a href="login?redirect=attorney-profile?id=<?=$attorneyId?>" class="cosulting hvr-vertical">
+                               Book Your Appointment
                                 <div class="border-animate">
                                     <div class="top"></div>
                                     <div class="right"></div>

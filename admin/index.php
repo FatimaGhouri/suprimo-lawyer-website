@@ -198,6 +198,7 @@ $appCount = mysqli_fetch_array($appCountResult)[0];
                         <div class="headingg2">
                             <h4 class="text-center">Contact Us List</h4>
                         </div>
+                        <div class="table-responsive">
                         <table class="table">
                             <thead>
                                 <tr>
@@ -259,6 +260,7 @@ $appCount = mysqli_fetch_array($appCountResult)[0];
                                 ?>
                             </tbody>
                         </table>
+                      </div>
                     </div>
                 </div>
                 <!-- content-wrapper ends -->

@@ -32,7 +32,7 @@ if (isset($_POST['registerLawyer'])) {
 
   $regLawyer = "INSERT INTO lawyers(fullname, email, password, contact, services, location, image, description) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
-  $targetDir = '../admin-dashboard/template/images/uploads/';
+  $targetDir = 'admin/images/uploads/';
   $targetFile = $targetDir . basename($imgName);
   if (move_uploaded_file($tmp_name, $targetFile)) {
     if (mysqli_stmt_prepare($stmt, $regLawyer)) {

@@ -96,19 +96,19 @@ if (isset($fileName)) {
                                     <a href="index" class="<?= activeNav('index') ?>">Home</a>
                                 </li>
                                 <li>
-                                    <a href="about" class="<?= activeNav('about.php') ?>">About</a>
+                                    <a href="about" class="<?= activeNav('about') ?>">About</a>
                                 </li>
                                 <li>
-                                    <a href="practice-area" class="<?= activeNav('practice-area.php') ?>">Practice Areas</a>
+                                    <a href="practice-area" class="<?= activeNav('practice-area') ?>">Practice Areas</a>
                                 </li>
                                 <li>
-                                    <a href="attorneys" class="<?= activeNav('attorneys.php') ?>">Attorneys</a>
+                                    <a href="attorneys" class="<?= activeNav('attorneys') ?>">Attorneys</a>
                                 </li>
                                 <li>
-                                    <a href="blog" class="<?= activeNav('blog.php') ?>">blog</a>
+                                    <a href="blog" class="<?= activeNav('blog') ?>">blog</a>
                                 </li>
                                 <li>
-                                    <a href="contact" class="<?= activeNav('contact.php') ?>">Contact</a>
+                                    <a href="contact" class="<?= activeNav('contact') ?>">Contact</a>
                                 </li>
 
                                 <?php

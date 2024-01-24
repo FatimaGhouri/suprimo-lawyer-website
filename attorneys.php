@@ -111,7 +111,7 @@ $result = mysqli_query($conn, $sql);
                                 </div>
                                 <div class="attorneys-content w-100">
                                     <div class="content-wrap w-100">
-                                        <h3 class="name"><a href="#">
+                                        <h3 class="name"><a href="attorney-profile.php?id=<?php echo $rows['id']; ?>">
                                                 <?php echo ucwords("Name: " . $rows['fullname']); ?>
                                             </a></h3>
                                         <p class="position">

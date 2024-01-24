@@ -37,7 +37,7 @@ if (isset($_POST['updateLawyerForm'])) {
 
     function uploadImage($tmp_name, $imgName)
     {
-        $targetDir = '../../admin-dashboard/template/images/uploads';
+        $targetDir = '../admin/images/uploads';
         $targetFile = $targetDir . basename($imgName);
         if (move_uploaded_file($tmp_name, $targetFile)) {
             return $targetFile;
@@ -211,7 +211,7 @@ if (isset($_POST['updateLawyerForm'])) {
 
                 <li class="nav-item dropdown pe-3" style="list-style: none;">
                     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                        <img src="../../admin-dashboard/template/images/uploads/<?php echo ucwords($lawyerImage); ?>"
+                        <img src="../admin/images/uploads/<?php echo ucwords($lawyerImage); ?>"
                             alt="Profile" class="rounded-circle" />
                         <span class="d-none d-md-block dropdown-toggle ps-2"> <?php echo ucwords($lawyerName); ?>
                         </span> </a>
@@ -245,7 +245,7 @@ if (isset($_POST['updateLawyerForm'])) {
                     <div class="card">
                         <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-                            <img src="../../admin-dashboard/template/images/uploads/<?php echo ucwords($lawyerImage); ?>"
+                            <img src="../admin/images/uploads/<?php echo ucwords($lawyerImage); ?>"
                                 alt="Profile" class="rounded-circle">
                             <h2><?php echo ucwords($lawyerName); ?>
                             </h2>
@@ -361,7 +361,7 @@ if ($errorMsg) {
                                             <label for="lawyerImage" class="col-md-4 col-lg-3 col-form-label">Your
                                                 Image</label>
                                             <div class="col-md-8 col-lg-9">
-                                                <img src="../../admin-dashboard/template/images/uploads/<?php echo ucwords($lawyerImage); ?>"
+                                                <img src="../admin/images/uploads/<?php echo ucwords($lawyerImage); ?>"
                                                     alt="">
                                             </div>
                                         </div>

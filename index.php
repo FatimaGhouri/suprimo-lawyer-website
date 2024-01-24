@@ -374,7 +374,7 @@ $secResult = mysqli_query($conn, $secLawyers);
                             wrongdoing, ensuring fairness and integrity prevail in every case we undertake.
                         </p>
                         <div class="fl-btn">
-                            <a href="practice-area.php" class="hvr-vertical">know more</a>
+                            <a href="practice-area" class="hvr-vertical">know more</a>
                         </div>
                     </div>
                 </div>
@@ -411,13 +411,13 @@ $secResult = mysqli_query($conn, $secLawyers);
                                     </div>
                                     <div class="overlay-box">
                                         <div class="content">
-                                            <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
+                                            <a href="attorney-profile.php?id=<?php echo $rows['id']; ?>"><i class="fa fa-link" aria-hidden="true"></i></a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="attorneys-content">
                                     <div class="content-wrap rotate-1">
-                                        <h3 class="name"><a href="#"><?php echo $rows['fullname'];?></a></h3>
+                                        <h3 class="name"><a href="attorney-profile.php?id=<?php echo $rows['id']; ?>"><?php echo $rows['fullname'];?></a></h3>
                                         <p class="position"><?php echo $rows['services'];?></p>
                                     </div>
                                 </div>
@@ -442,17 +442,17 @@ $secResult = mysqli_query($conn, $secLawyers);
                         
                         <div class="attorneys-avatar hv-link-content">
                             <div class="image image-full">
-                                <img src="../admin-dashboard/template/images/uploads/<?php echo $secRows['image'];?>" alt="images">
+                                <img src="admin/images/uploads/<?php echo $secRows['image'];?>" alt="images">
                             </div>
                             <div class="overlay-box">
                                 <div class="content">
-                                    <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
+                                    <a href="attorney-profile?id=<?php echo $secRows['id']; ?>"><i class="fa fa-link" aria-hidden="true"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div class="attorneys-content">
                             <div class="content-wrap rotate-1">
-                                <h3 class="name"><a href="#"><?php echo $secRows['fullname'];?></a></h3>
+                                <h3 class="name"><a href="attorney-profile?id=<?php echo $secRows['id']; ?>"><?php echo $secRows['fullname'];?></a></h3>
                                 <p class="position"><?php echo $secRows['services'];?></p>
                             </div>
                         </div>
@@ -463,7 +463,7 @@ $secResult = mysqli_query($conn, $secLawyers);
                 }
                 ?>
             </div>
-            <div class="view-all"><a href="attorneys.php">view all</a></div>
+            <div class="view-all"><a href="attorneys">view all</a></div>
         </div>
     </div>
 </section> <!-- attorneys  -->

@@ -1,6 +1,15 @@
 <?php
 require_once "config.php";
 $errorMsg = false;
+$redirect = 'index';
+function redirect()
+{
+    global $redirect;
+    if (isset($_GET['redirect'])) {
+        $redirect = $_GET['redirect'];
+    }
+}
+
 if (isset($_POST['loginCustomer'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -14,7 +23,8 @@ if (isset($_POST['loginCustomer'])) {
         $_SESSION["id"] = $row["id"];
         $_SESSION["login"] = true;
         $_SESSION["userType"] = "customer";
-        header("location:index.php");
+        redirect();
+        header("location:" . $redirect);
     } else {
         $errorMsg = "No such Record Found. Kindly submit valid credentials !";
     }
@@ -32,7 +42,8 @@ if (isset($_POST['loginLawyer'])) {
         $_SESSION["id"] = $row["id"];
         $_SESSION["login"] = true;
         $_SESSION["userType"] = "lawyer";
-        header("location:index.php");
+        redirect();
+        header("location:" . $redirect);
     } else {
         $errorMsg = "No such Record Found. Knidly submit valid credentials !";
     }
@@ -322,8 +333,7 @@ if (isset($_POST['loginLawyer'])) {
 
                         <div class="input_wrapper mt-4">
                             <label for="password" class="input_label">Password:</label>
-                            <input type="password" id="password" name="password" class="input_field" class="form-control" placeholder="Your Password"
-                             title="Minimum 6 character at least 1 Alphabet and 1 Number" required>
+                            <input type="password" id="password" name="password" class="input_field" class="form-control" placeholder="Your Password" title="Minimum 6 character at least 1 Alphabet and 1 Number" required>
                             <!-- svg -->
                         </div>
 

@@ -2458,6 +2458,7 @@ input::-webkit-input-placeholder {
 }
 .introduce-attorneys .text p:last-child {
     margin-bottom: 0;
+    text-align: justify;
 }
 .flat-question .accordion-toggle {
     padding-bottom: 30px;
